@@ -3,11 +3,16 @@ import api from "../utils/api"
 
 export function Login(){
     const [passwordInput, setPasswordInput] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
+    const [token, setToken] = useState('')
     const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
         evt.preventDefault()
         api.login({password: passwordInput})
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            data.error ? setErrorMessage(data.error)
+                       : setToken(data)
+        })
     }
     return(
         <div className="h-screen flex justify-center items-center flex-col gap-8 bg-slate-900 text-slate-300">
