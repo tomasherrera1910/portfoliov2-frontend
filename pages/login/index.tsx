@@ -1,7 +1,22 @@
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { Login } from '../../components/Login'
-
-export default function Home() {
+import { getTokenLS } from '../../utils/token'
+export const getServerSideProps: GetServerSideProps = async () => {
+  const token = getTokenLS()
+  if (token) {
+    return {
+      redirect: {
+        destination: '/admin',
+        permanent: false,
+      },
+    }
+  }
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
+export default function LoginPage() {
   return (
     <>
       <Head>
