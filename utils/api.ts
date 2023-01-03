@@ -3,6 +3,7 @@ const api = {
     login: (password:Record<string,string>):Promise<Response> => {
         return fetch(`${backendURL}/login`,{
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
             },
@@ -10,5 +11,4 @@ const api = {
         })
     }
 }
-
 export default api
