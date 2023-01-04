@@ -1,26 +1,26 @@
-import { useState } from "react"
+import { useState } from 'react'
 import { useRouter } from 'next/router'
-import api from "../utils/api"
+import api from '../utils/api'
 
-export function Login() {
-    const [passwordInput, setPasswordInput] = useState('')
-    const [errorMessage, setErrorMessage] = useState('')
-    const router = useRouter()
-    const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-        evt.preventDefault()
-        api.login({ password: passwordInput })
-            .then(res => res.json())
-            .then(data => {
-                data.error ? setErrorMessage(data.error)
-                           : router.push('/admin')
-            })
-    }
-    const handlePasswordInput = (evt: React.ChangeEvent<HTMLInputElement>) => {
-        setPasswordInput(evt.target.value)
-        if (errorMessage)
-            setErrorMessage('')
-    }
-    return (
+export function Login (): JSX.Element {
+  const [passwordInput, setPasswordInput] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
+  const router = useRouter()
+  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>): void => {
+    evt.preventDefault()
+    api.login({ password: passwordInput })
+      .then(async res => await res.json())
+      .then(data => {
+        typeof data.error === 'string'
+          ? setErrorMessage(data.error)
+          : router.push('/admin')
+      }).catch(e => { console.error(e) })
+  }
+  const handlePasswordInput = (evt: React.ChangeEvent<HTMLInputElement>): void => {
+    setPasswordInput(evt.target.value)
+    if (errorMessage !== '') { setErrorMessage('') }
+  }
+  return (
         <div className="h-screen flex justify-center items-center flex-col gap-8 bg-slate-900 text-slate-300">
             <h1 className="text-5xl uppercase font-mono">Admin</h1>
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
@@ -39,5 +39,5 @@ export function Login() {
                 </button>
             </form>
         </div>
-    )
+  )
 }

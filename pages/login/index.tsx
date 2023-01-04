@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Login } from '../../components/Login'
 
-export default function LoginPage() {
+export default function LoginPage (): JSX.Element {
   return (
     <>
       <Head>
@@ -11,7 +11,7 @@ export default function LoginPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Login/>
+        <Login />
       </main>
     </>
   )
