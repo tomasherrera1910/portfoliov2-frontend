@@ -8,17 +8,20 @@ import { faLock } from '@fortawesome/free-solid-svg-icons'
 export function Login (): JSX.Element {
   const [passwordInput, setPasswordInput] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
-
+  const [loading, setLoading] = useState(false)
   const router = useRouter()
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>): void => {
     evt.preventDefault()
+    setLoading(true)
     api.login({ password: passwordInput })
       .then(async res => await res.json())
       .then(data => {
         typeof data.error === 'string'
           ? setErrorMessage(data.error)
           : router.push('/admin')
-      }).catch(e => { console.error(e) })
+      })
+      .finally(() => { setLoading(false) })
+      .catch(e => { console.error(e) })
   }
 
   const handlePasswordInput = (evt: React.ChangeEvent<HTMLInputElement>): void => {
@@ -34,7 +37,7 @@ export function Login (): JSX.Element {
                   <label className="text-red-500 text-sm flex gap-2"><FontAwesomeIcon icon={faLock} className="w-4"/> {errorMessage}</label>
                 }
                 <button type="submit" className="font-bold bg-slate-800 rounded py-2 text-slate-400 border-b-2 border-b-slate-400 hover:text-slate-800 hover:bg-slate-400">
-                    INGRESAR
+                    {loading ? 'Cargando...' : 'INGRESAR'}
                 </button>
             </form>
         </div>
