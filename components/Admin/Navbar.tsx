@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 export function Navbar (): JSX.Element {
   return (
-        <header className="py-4 px-2 bg-black bg-opacity-25 backdrop-blur-sm flex justify-between items-center w-screen fixed top-0 left-0">
-            <Link href={'/'} className="flex gap-2">
+        <header className="py-4 px-4 bg-black bg-opacity-25 backdrop-blur-sm flex justify-between items-center w-full fixed top-0 left-0">
+            <Link href={'/'} className="flex gap-2 ease-in-out duration-100 hover:scale-110 hover:font-bold">
                 Ir al Portfolio
             </Link>
             <span className="flex gap-2">
