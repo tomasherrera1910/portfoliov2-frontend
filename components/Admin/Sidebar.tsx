@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useToggle } from '../../hooks/useToggle'
 import { faArrowLeft, faArrowRight, faBook, faHome, faList } from '@fortawesome/free-solid-svg-icons'
 import { IButtonAside } from '../../utils/types'
@@ -5,6 +6,7 @@ import ButtonSidebar from './ButtonSidebar'
 
 export function Sidebar (): JSX.Element {
   const { toggle, handleToggle } = useToggle()
+  const [activeButton, setActiveButton] = useState('INITIAL_TEXT')
   const asideWidth = toggle ? 'w-40' : 'w-6'
   const BUTTONS: IButtonAside[] = [
     {
@@ -17,22 +19,31 @@ export function Sidebar (): JSX.Element {
       icon: faHome,
       icon2: null,
       text: 'Admin Home',
-      handleClick: () => {}
+      handleClick: () => {
+        handleActive('Admin Home')
+      }
     },
     {
       icon: faList,
       icon2: null,
       text: 'Projects',
-      handleClick: () => {}
+      handleClick: () => {
+        handleActive('Projects')
+      }
     },
     {
       icon: faBook,
       icon2: null,
       text: 'Skills',
-      handleClick: () => {}
+      handleClick: () => {
+        handleActive('Skills')
+      }
     }
   ]
-  //   const active = ' bg-white text-black'
+  const handleActive = (buttonText: string): void => {
+    setActiveButton(buttonText)
+  }
+
   return (
         <aside className={'h-screen bg-black bg-opacity-75 backdrop-blur-sm fixed top-14 left-0 flex flex-col items-center ease-linear duration-150 ' + asideWidth}>
             {BUTTONS.map((info, idx) => (
@@ -41,6 +52,7 @@ export function Sidebar (): JSX.Element {
                 handleClick={info.handleClick}
                 text={info.text}
                 toggle={toggle}
+                active={activeButton === info.text ? 'bg-white text-black' : ''}
                 icon={toggle ? (info.icon2 ?? info.icon) : info.icon}
                 />
             ))}
