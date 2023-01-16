@@ -6,3 +6,22 @@ export interface IButtonAside {
   text: string
   handleClick: () => void
 }
+
+export interface Skill {
+  id: number
+  name: string
+  imageURL: string
+  technology?: string
+}
+
+export interface Project {
+  id: number
+  name: string
+  description?: string
+  image: string
+  colors: string[]
+  backendRepo?: string
+  frontEndRepo?: string
+  deployURL: string
+  techonologies: Array<Partial<Skill>>
+}
