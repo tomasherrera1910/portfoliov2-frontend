@@ -13,7 +13,7 @@ export default function ButtonSidebar ({ icon, text, toggle, handleClick, active
   const buttonStyle = 'flex gap-2 items-center justify-center w-full py-4 ease-linear duration-200 hover:bg-slate-800 hover:text-gray-200'
   return (
         <button onClick={handleClick} className={`${buttonStyle} ${active}`}>
-                <FontAwesomeIcon icon={icon} className="w-4"/>
+                <FontAwesomeIcon icon={icon} className="w-4 min-[600px]:w-6"/>
                 {toggle && text}
         </button>
   )

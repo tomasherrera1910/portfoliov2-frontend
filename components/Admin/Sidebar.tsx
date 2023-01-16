@@ -7,7 +7,7 @@ import ButtonSidebar from './ButtonSidebar'
 export function Sidebar (): JSX.Element {
   const { toggle, handleToggle } = useToggle()
   const [activeButton, setActiveButton] = useState('INITIAL_TEXT')
-  const asideWidth = toggle ? 'w-40' : 'w-6'
+  const asideWidth = toggle ? 'w-40' : 'w-6 min-[600px]:w-12'
   const BUTTONS: IButtonAside[] = [
     {
       icon: faArrowRight,

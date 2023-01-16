@@ -12,7 +12,7 @@ export default function LoginPage (): JSX.Element {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className='bg-gradient-to-r from-gray-900 via-gray-800 to-slate-800 text-white pt-16 pl-8'>
+            <main className='bg-gradient-to-r from-gray-900 via-gray-800 to-slate-800 text-white pt-16 pl-8 min-[600px]:pl-12'>
                 <Navbar />
                 <Sidebar />
                 <AdminInfo />
