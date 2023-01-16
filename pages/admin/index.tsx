@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { AdminInfo } from '../../components/Admin/AdminInfo'
 import { Navbar } from '../../components/Admin/Navbar'
 import { Sidebar } from '../../components/Admin/Sidebar'
+import { Skills } from '../../components/Admin/Skills'
 
 export default function LoginPage (): JSX.Element {
   return (
@@ -12,10 +13,11 @@ export default function LoginPage (): JSX.Element {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className='bg-gradient-to-r from-gray-900 via-gray-800 to-slate-800 text-white pt-16 pl-8 min-[600px]:pl-12'>
+            <main className='min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-slate-800 text-white pr-4 pt-16 pl-12 min-[600px]:pl-16 scroll-smooth'>
                 <Navbar />
                 <Sidebar />
                 <AdminInfo />
+                <Skills/>
             </main>
         </>
   )
