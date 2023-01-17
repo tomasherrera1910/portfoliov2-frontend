@@ -1,10 +1,17 @@
-import { faBook } from '@fortawesome/free-solid-svg-icons'
+import { Skill } from '../../../utils/types'
+import SkillsForm from './SkillsForm'
+import { faBook, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export function Skills (): JSX.Element {
+interface Props {
+  initialSkills: Skill[]
+}
+export function Skills ({ initialSkills }: Props): JSX.Element {
   return (
         <section className='py-6'>
-            <h1 className="text-3xl flex items-center gap-4"><FontAwesomeIcon icon={faBook} className="w-8"/> Skills</h1>
+            <h1 className="text-3xl flex items-center gap-4 py-4"><FontAwesomeIcon icon={faBook} className="w-8"/> Skills</h1>
+            <button className="flex items-center gap-2 border-gray-50 rounded border-solid border-[1px] p-2 ease-in-out duration-100 hover:text-black hover:bg-zinc-200">Add Skill <FontAwesomeIcon icon={faFileCirclePlus} className="w-6"/></button>
+            <SkillsForm/>
         </section>
   )
 }
