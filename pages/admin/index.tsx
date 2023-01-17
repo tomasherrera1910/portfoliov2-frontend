@@ -1,10 +1,24 @@
+import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import { AdminInfo } from '../../components/Admin/AdminInfo'
 import { Navbar } from '../../components/Admin/Navbar'
 import { Sidebar } from '../../components/Admin/Sidebar'
 import { Skills } from '../../components/Admin/Skills'
+import api from '../../utils/api'
+import { Skill } from '../../utils/types'
 
-export default function LoginPage (): JSX.Element {
+interface Props {
+  skills: Skill[]
+}
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const skills = await api.getSkills()
+  return {
+    props: {
+      skills
+    }
+  }
+}
+const AdminPage: NextPage<Props> = ({ skills }: Props) => {
   return (
         <>
             <Head>
@@ -17,8 +31,9 @@ export default function LoginPage (): JSX.Element {
                 <Navbar />
                 <Sidebar />
                 <AdminInfo />
-                <Skills/>
+                <Skills initialSkills={skills}/>
             </main>
         </>
   )
 }
+export default AdminPage
