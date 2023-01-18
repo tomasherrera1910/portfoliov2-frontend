@@ -29,14 +29,14 @@ export function Login (): JSX.Element {
     if (errorMessage !== '') { setErrorMessage('') }
   }
   return (
-        <div className="h-screen flex justify-center items-center flex-col gap-8 bg-slate-900 text-slate-300">
+        <div className="h-screen flex justify-center items-center flex-col gap-8 bg-gradient-to-tl from-slate-900 to-cyan-900  text-slate-300">
             <h1 className="text-5xl uppercase font-mono">Admin</h1>
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                 <InputPassword passwordInput={passwordInput} handlePasswordInput={handlePasswordInput}/>
                 {errorMessage !== '' &&
                   <label className="text-red-500 text-sm flex gap-2"><FontAwesomeIcon icon={faLock} className="w-4"/> {errorMessage}</label>
                 }
-                <button type="submit" className="font-bold bg-slate-800 rounded py-2 text-slate-400 border-b-2 border-b-slate-400 hover:text-slate-800 hover:bg-slate-400">
+                <button type="submit" className="font-bold bg-black bg-opacity-60 rounded py-2 text-slate-400 shadow-sm ease-in-out duration-200 hover:from-slate-800 hover:to-black hover:bg-gradient-to-r hover:scale-95">
                     {loading ? 'Cargando...' : 'INGRESAR'}
                 </button>
             </form>
