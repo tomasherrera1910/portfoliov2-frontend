@@ -1,4 +1,4 @@
-import { getInfo, postInfo } from './CRUDfunctions'
+import { deleteInfo, getInfo, postInfo } from './CRUDfunctions'
 import { Project, Skill } from './types'
 
 // const backendURL = process.env.NEXT_PUBLIC_BACKEND_URI ?? 'http://localhost:3001'
@@ -32,6 +32,12 @@ const api = {
   createProject: async (project: Partial<Project>): Promise<Project> => {
     const data: Project = await postInfo('projects', project)
     return data
+  },
+  deleteSkill: async (id: number): Promise<any> => {
+    return await deleteInfo('skills', id)
+  },
+  deleteProject: async (id: number): Promise<any> => {
+    return await deleteInfo('projects', id)
   }
 }
 export default api
