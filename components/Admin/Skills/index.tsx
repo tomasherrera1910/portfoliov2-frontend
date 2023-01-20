@@ -20,7 +20,7 @@ export function Skills ({ initialSkills }: Props): JSX.Element {
             <section className="flex flex-wrap gap-2 py-2">
             {skills.map(({ id, imageURL, name, technology }) => {
               return (
-                <SkillCard key={id} imageURL={imageURL} name={name} technology={technology}/>
+                <SkillCard key={id} id={id} imageURL={imageURL} name={name} technology={technology}/>
               )
             })}
             </section>
