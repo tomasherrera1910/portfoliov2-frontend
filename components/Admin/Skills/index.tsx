@@ -1,16 +1,21 @@
+import { useState } from 'react'
+import api from '../../../utils/api'
 import { Skill } from '../../../utils/types'
 import SkillsForm from './SkillsForm'
 import { faBook, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useState } from 'react'
 import { SkillCard } from './SkillCard'
 
 interface Props {
   initialSkills: Skill[]
 }
 export function Skills ({ initialSkills }: Props): JSX.Element {
-  const [skills] = useState(initialSkills)
+  const [skills, setSkills] = useState(initialSkills)
   const [isFormOpen, setFormOpen] = useState(false)
+  const updateSkills = async (): Promise<void> => {
+    const updatedSkills = await api.getSkills()
+    setSkills(updatedSkills)
+  }
   const handleForm = (): void => { setFormOpen(prev => !prev) }
   return (
         <section className='py-6'>
@@ -20,7 +25,7 @@ export function Skills ({ initialSkills }: Props): JSX.Element {
             <section className="flex flex-wrap gap-2 py-2">
             {skills.map(({ id, imageURL, name, technology }) => {
               return (
-                <SkillCard key={id} id={id} imageURL={imageURL} name={name} technology={technology}/>
+                <SkillCard key={id} id={id} imageURL={imageURL} name={name} technology={technology} update={updateSkills}/>
               )
             })}
             </section>

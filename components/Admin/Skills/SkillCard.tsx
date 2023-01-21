@@ -10,14 +10,18 @@ interface Props {
   imageURL: string
   name: string
   technology: string | undefined
+  update: () => Promise<void>
 }
-export function SkillCard ({ id, imageURL, name, technology }: Props): JSX.Element {
+export function SkillCard ({ id, imageURL, name, technology, update }: Props): JSX.Element {
   const [deleteModal, setDeleteModal] = useState(false)
   const handleDeleteModal = (): void => {
     setDeleteModal(prevState => !prevState)
   }
   const handleDelete = (): void => {
     api.deleteSkill(id)
+      .then(async () => {
+        await update()
+      })
       .finally(() => {
         handleDeleteModal()
       })
