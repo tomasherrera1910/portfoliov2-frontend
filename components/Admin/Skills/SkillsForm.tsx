@@ -7,10 +7,11 @@ import Modal from '../../Modal'
 interface Props {
   open: boolean
   handleOpen: () => void
+  update: () => Promise<void>
 }
 
-export default function SkillsForm ({ open, handleOpen }: Props): JSX.Element {
-  const { errorMessage, handleChange, handleSubmit, form } = useForm(handleOpen)
+export default function SkillsForm ({ open, handleOpen, update }: Props): JSX.Element {
+  const { errorMessage, handleChange, handleSubmit, form } = useForm(handleOpen, update)
   const inputStyle = 'bg-gray-900 text-white p-1 outline-none rounded ease-in-out duration-150 focus:outline-1 focus:outline-cyan-400 focus:shadow-sm focus:shadow-cyan-600'
   const labelStyle = 'flex flex-col gap-1 text-gray-300 text-sm'
   const displayModal = open ? 'block' : 'hidden'

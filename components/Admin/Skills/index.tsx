@@ -21,7 +21,7 @@ export function Skills ({ initialSkills }: Props): JSX.Element {
         <section className='py-6'>
             <h1 className="text-3xl flex items-center gap-4 py-4"><FontAwesomeIcon icon={faBook} className="w-8"/> Skills</h1>
             <button onClick={handleForm} className="flex items-center gap-2 border-gray-50 rounded border-solid border-[1px] p-2 ease-in-out duration-100 hover:text-black hover:bg-zinc-200">Add Skill <FontAwesomeIcon icon={faFileCirclePlus} className="w-6"/></button>
-            <SkillsForm open={isFormOpen} handleOpen={handleForm}/>
+            <SkillsForm open={isFormOpen} handleOpen={handleForm} update={updateSkills}/>
             <section className="flex flex-wrap gap-2 py-2">
             {skills.map(({ id, imageURL, name, technology }) => {
               return (

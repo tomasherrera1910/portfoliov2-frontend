@@ -14,7 +14,7 @@ const INITIAL_FORM = {
   technology: ''
 }
 
-const useForm = (handleOpen: () => void): FormInterface => {
+const useForm = (handleOpen: () => void, update: () => Promise<void>): FormInterface => {
   const [form, setForm] = useState(INITIAL_FORM)
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -28,7 +28,8 @@ const useForm = (handleOpen: () => void): FormInterface => {
     if (form.name === '' || form.imageURL === '') {
       setErrorMessage('The fields with * are required!')
     } else {
-      create(form).then((data) => {
+      create(form).then(async (_data) => {
+        await update()
         handleOpen()
         setErrorMessage('')
         setForm(INITIAL_FORM)
