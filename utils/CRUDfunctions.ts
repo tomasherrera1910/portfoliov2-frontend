@@ -27,3 +27,16 @@ export async function deleteInfo (path: string, ID: string | number): Promise<an
     }
   })
 }
+
+export async function editInfo (path: string, ID: number, info: any): Promise<any> {
+  const response = await fetch(`${devURL}/${path}/${ID}`, {
+    method: 'PUT',
+    credentials: 'include',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8'
+    },
+    body: JSON.stringify(info)
+  })
+  const data = await response.json()
+  return data
+}
