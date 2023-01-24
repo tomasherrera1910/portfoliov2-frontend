@@ -2,23 +2,27 @@ import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import { AdminInfo } from '../../components/Admin/AdminInfo'
 import { Navbar } from '../../components/Admin/Navbar'
+import { Projects } from '../../components/Admin/Projects'
 import { Sidebar } from '../../components/Admin/Sidebar'
 import { Skills } from '../../components/Admin/Skills'
 import api from '../../utils/api'
-import { Skill } from '../../utils/types'
+import { Project, Skill } from '../../utils/types'
 
 interface Props {
   skills: Skill[]
+  projects: Project[]
 }
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const skills = await api.getSkills()
+  const projects = await api.getProjects()
   return {
     props: {
-      skills
+      skills,
+      projects
     }
   }
 }
-const AdminPage: NextPage<Props> = ({ skills }: Props) => {
+const AdminPage: NextPage<Props> = ({ skills, projects }: Props) => {
   return (
         <>
             <Head>
@@ -31,6 +35,7 @@ const AdminPage: NextPage<Props> = ({ skills }: Props) => {
                 <Navbar />
                 <Sidebar />
                 <AdminInfo />
+                <Projects initialProjects={projects}/>
                 <Skills initialSkills={skills}/>
             </main>
         </>
