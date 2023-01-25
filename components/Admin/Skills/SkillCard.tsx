@@ -36,11 +36,11 @@ export function SkillCard ({ id, imageURL, name, technology, update }: Props): J
   return (
     <>
     <article
-    className='border-[1px] border-zinc-100 rounded p-2 bg-black bg-opacity-50 flex flex-col items-center justify-center'
+    className='border-[1px] border-zinc-100 rounded p-2 bg-black bg-opacity-10 flex flex-col items-center justify-center min-w-[120px]'
     onMouseEnter={() => { setColorImage('grayscale-0') }}
     onMouseLeave={() => { setColorImage('grayscale') }}
     >
-        <img src={imageURL} alt={name} className={`w-16 ${colorImage} ease-in-out duration-200`}/>
+        <img src={imageURL} alt={name} className={`w-16 h-16 object-contain ${colorImage} ease-in-out duration-200`}/>
         <h1 className="font-bold">{name}</h1>
         <span className='text-gray-200 font-extralight text-xs'>{technology}</span>
         <div className='flex justify-around pt-2 w-full'>
