@@ -45,7 +45,7 @@ export function Sidebar (): JSX.Element {
   }
 
   return (
-        <aside className={'h-screen bg-black bg-opacity-75 backdrop-blur-sm fixed top-14 left-0 border-r-[1px] z-10 border-gray-500 flex flex-col items-center ease-linear duration-150 ' + asideWidth}>
+        <aside className={'h-screen bg-black bg-opacity-25 backdrop-blur-sm fixed top-14 left-0 border-r-[1px] z-10 border-gray-500 flex flex-col items-center ease-linear duration-150 ' + asideWidth}>
             {BUTTONS.map((info, idx) => (
                 <ButtonSidebar
                 key={idx}
