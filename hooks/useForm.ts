@@ -1,26 +1,24 @@
 import { useState } from 'react'
-import api from '../utils/api'
-import { Skill } from '../utils/types'
+import { Project, Skill } from '../utils/types'
 
+type SkillProject = Partial<Skill> & Partial<Project>
 interface FormInterface {
   handleChange: (evt: React.ChangeEvent<HTMLInputElement>, field: string) => void
-  handleSubmit: (evt: React.FormEvent<HTMLFormElement>) => void
+  postForm: () => void
+  putForm: () => void
   errorMessage: string
-  form: Partial<Skill>
+  form: SkillProject
+  setError: () => void
 }
 interface hookParameters {
-  edit?: boolean
-  INITIAL_FORM?: Partial<Skill>
+  INITIAL_FORM: SkillProject
   handleOpen: () => void
   update: () => Promise<void>
-}
-const INITIAL_FORM_ADD = {
-  name: '',
-  imageURL: '',
-  technology: ''
+  post: (data: SkillProject) => Promise<any>
+  put: (id: number, data: SkillProject) => Promise<any>
 }
 
-const useForm = ({ edit, INITIAL_FORM = INITIAL_FORM_ADD, handleOpen, update }: hookParameters): FormInterface => {
+const useForm = ({ INITIAL_FORM, handleOpen, update, post, put }: hookParameters): FormInterface => {
   const [form, setForm] = useState(INITIAL_FORM)
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -29,29 +27,27 @@ const useForm = ({ edit, INITIAL_FORM = INITIAL_FORM_ADD, handleOpen, update }: 
       return { ...prevForm, [field]: evt.target.value }
     })
   }
-  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>): void => {
-    evt.preventDefault()
-    if (!(edit ?? false)) {
-      if (form.name === '' || form.imageURL === '') {
-        setErrorMessage('The fields with * are required!')
-      } else {
-        api.createSkill(form).then(async (_data) => {
-          await update()
-          handleOpen()
-          setErrorMessage('')
-          setForm(INITIAL_FORM)
-        })
-      }
-    } else if (edit === true) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      api.editSkill(INITIAL_FORM.id!, form).then(async (data) => {
+  const postForm = (): void => {
+    post(form).then(async (_data) => {
+      await update()
+      handleOpen()
+      setErrorMessage('')
+      setForm(INITIAL_FORM)
+    })
+  }
+  const putForm = (): void => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    put(INITIAL_FORM.id!, form)
+      .then(async (_data) => {
         await update()
         handleOpen()
         setErrorMessage('')
       })
-    }
   }
-  return { handleChange, handleSubmit, errorMessage, form }
+  const setError = (): void => {
+    setErrorMessage('Fields with * are required')
+  }
+  return { handleChange, postForm, putForm, errorMessage, form, setError }
 }
 
 export default useForm
