@@ -3,7 +3,7 @@ import { Project, Skill } from '../utils/types'
 
 type SkillProject = Partial<Skill> & Partial<Project>
 interface FormInterface {
-  handleChange: (evt: React.ChangeEvent<HTMLInputElement>, field: string) => void
+  handleChange: (evt: React.ChangeEvent<HTMLInputElement>, field: string, pos?: number) => void
   postForm: () => void
   putForm: () => void
   errorMessage: string
@@ -22,11 +22,19 @@ const useForm = ({ INITIAL_FORM, handleOpen, update, post, put }: hookParameters
   const [form, setForm] = useState(INITIAL_FORM)
   const [errorMessage, setErrorMessage] = useState('')
 
-  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>, field: string): void => {
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>, field: string, pos?: number): void => {
     setForm(prevForm => {
-      return { ...prevForm, [field]: evt.target.value }
+      if (pos != null && field === 'colors') {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const newColors = [...prevForm.colors!]
+        newColors[pos] = evt.target.value
+        return { ...prevForm, colors: newColors }
+      } else {
+        return { ...prevForm, [field]: evt.target.value }
+      }
     })
   }
+
   const postForm = (): void => {
     post(form).then(async (_data) => {
       await update()

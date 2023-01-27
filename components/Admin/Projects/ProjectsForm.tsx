@@ -47,6 +47,7 @@ export default function ProjectsForm ({ open, handleOpen, update, edit, INITIAL_
       }
     }
   }
+  console.log(form)
   return (
       <Modal open={open}>
           <div className={`${displayModal} fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-gradient-to-bl from-slate-900 via-cyan-900 to-blue-900 py-12 px-16 rounded border-2 border-cyan-600 max-h-[80vh] overflow-auto`}>
@@ -61,35 +62,44 @@ export default function ProjectsForm ({ open, handleOpen, update, edit, INITIAL_
                 </label>
                 <label className={labelStyle}>
                     Description
-                    <input value={form.name} onChange={(evt) => { handleChange(evt, 'name') }} className={`${inputStyle} resize-y`}/>
+                    <input value={form.name} onChange={(evt) => { handleChange(evt, 'description') }} className={`${inputStyle} resize-y`}/>
                 </label>
                 <label className={labelStyle}>
                     Image *
-                    <input value={form.imageURL} onChange={(evt) => { handleChange(evt, 'imageURL') }} className={inputStyle}/>
+                    <input value={form.imageURL} onChange={(evt) => { handleChange(evt, 'image') }} className={inputStyle}/>
                 </label>
                 <label className={labelStyle}>
                     Primary Color *
-                    <input value={form.imageURL} type='color' onChange={(evt) => { handleChange(evt, 'imageURL') }} className={inputStyle}/>
+                    <div className='flex gap-2'>
+                    <input value={form.imageURL} type='color' onChange={(evt) => { handleChange(evt, 'colors', 0) }} className={inputStyle}/>
+                    {(form.colors != null) && <span className='text-gray-400'>{form.colors[0]}</span>}
+                    </div>
                 </label>
                 <label className={labelStyle}>
                     Secondary Color *
-                    <input value={form.imageURL} type='color' onChange={(evt) => { handleChange(evt, 'imageURL') }} className={inputStyle}/>
+                    <div className='flex gap-2'>
+                    <input value={form.imageURL} type='color' onChange={(evt) => { handleChange(evt, 'colors', 1) }} className={inputStyle}/>
+                    {(form.colors != null) && <span className='text-gray-400'>{form.colors[1]}</span>}
+                    </div>
                 </label>
                 <label className={labelStyle}>
                     Text Color *
-                    <input value={form.imageURL} type='color' onChange={(evt) => { handleChange(evt, 'imageURL') }} className={inputStyle}/>
+                    <div className='flex gap-2'>
+                    <input value={form.imageURL} type='color' onChange={(evt) => { handleChange(evt, 'colors', 2) }} className={inputStyle}/>
+                    {(form.colors != null) && <span className='text-gray-400'>{form.colors[1]}</span>}
+                    </div>
                 </label>
                 <label className={labelStyle}>
                     Backend Repo URL
-                    <input value={form.imageURL} onChange={(evt) => { handleChange(evt, 'imageURL') }} className={inputStyle}/>
+                    <input value={form.imageURL} onChange={(evt) => { handleChange(evt, 'backendRepo') }} className={inputStyle}/>
                 </label>
                 <label className={labelStyle}>
                     Frontend Repo URL
-                    <input value={form.imageURL} onChange={(evt) => { handleChange(evt, 'imageURL') }} className={inputStyle}/>
+                    <input value={form.imageURL} onChange={(evt) => { handleChange(evt, 'frontendRepo') }} className={inputStyle}/>
                 </label>
                 <label className={labelStyle}>
                     Deploy URL *
-                    <input value={form.imageURL} onChange={(evt) => { handleChange(evt, 'imageURL') }} className={inputStyle}/>
+                    <input value={form.imageURL} onChange={(evt) => { handleChange(evt, 'deployURL') }} className={inputStyle}/>
                 </label>
                {errorMessage !== '' && <span className="text-xs text-red-900 font-bold bg-red-200 p-1 border-[1px] border-red-900 rounded">{errorMessage}</span>}
                 <button className='text-white border-[1px] border-cyan-600 rounded bg-gray-900 ease-in-out duration-200 hover:border-white hover:text-cyan-600'>
