@@ -49,7 +49,7 @@ export default function ProjectsForm ({ open, handleOpen, update, edit, INITIAL_
   }
   return (
       <Modal open={open}>
-          <div className={`${displayModal} fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-gradient-to-bl from-slate-900 via-cyan-900 to-blue-900 py-12 px-16 rounded border-2 border-cyan-600`}>
+          <div className={`${displayModal} fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-gradient-to-bl from-slate-900 via-cyan-900 to-blue-900 py-12 px-16 rounded border-2 border-cyan-600 max-h-[80vh] overflow-auto`}>
             <button className="absolute top-2 right-2 ease-in-out duration-150 text-white hover:text-red-900" onClick={handleOpen}>
               <FontAwesomeIcon icon={faClose} className="w-4"/>
             </button>
