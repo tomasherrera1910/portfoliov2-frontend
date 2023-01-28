@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Project } from '../../../utils/types'
+import { ProjectCard } from './ProjectCard'
 import { faFolder, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ProjectsForm from './ProjectsForm'
@@ -9,7 +10,7 @@ interface Props {
   initialProjects: Project[]
 }
 export function Projects ({ initialProjects }: Props): JSX.Element {
-  const [, setProjects] = useState(initialProjects)
+  const [projects, setProjects] = useState(initialProjects)
   const [isFormOpen, setFormOpen] = useState(false)
   const updateProjects = async (): Promise<void> => {
     const updatedProjects = await api.getProjects()
@@ -25,6 +26,9 @@ export function Projects ({ initialProjects }: Props): JSX.Element {
                 Add Project <FontAwesomeIcon icon={faFileCirclePlus} className="w-6"/>
             </button>
             <ProjectsForm open={isFormOpen} handleOpen={handleForm} update={updateProjects}/>
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project}/>
+            ))}
         </section>
   )
 }
