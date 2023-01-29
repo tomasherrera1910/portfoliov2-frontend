@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Project, Skill } from '../utils/types'
+import { Project, ProjectImage, Skill } from '../utils/types'
 
 type SkillProject = Partial<Skill> & Partial<Project>
 interface FormInterface {
@@ -29,6 +29,11 @@ const useForm = ({ INITIAL_FORM, handleOpen, update, post, put }: hookParameters
         const newColors = [...prevForm.colors!]
         newColors[pos] = evt.target.value
         return { ...prevForm, colors: newColors }
+      } else if (field === 'desktop' || field === 'mobile') {
+        const { images } = prevForm
+        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+        const newImages = { ...images, [field]: evt.target.value } as ProjectImage
+        return { ...prevForm, images: newImages }
       } else {
         return { ...prevForm, [field]: evt.target.value }
       }
