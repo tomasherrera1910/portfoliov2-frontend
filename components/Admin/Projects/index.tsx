@@ -26,9 +26,11 @@ export function Projects ({ initialProjects }: Props): JSX.Element {
                 Add Project <FontAwesomeIcon icon={faFileCirclePlus} className="w-6"/>
             </button>
             <ProjectsForm open={isFormOpen} handleOpen={handleForm} update={updateProjects}/>
+            <section className="flex flex-wrap gap-2 py-2">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project}/>
             ))}
+            </section>
         </section>
   )
 }
