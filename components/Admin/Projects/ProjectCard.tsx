@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { Project } from '../../../utils/types'
+import { Project, Skill } from '../../../utils/types'
+import { TechnologyCard } from './TechnologyCard'
+import { TechnologyForm } from './TechnologyForm'
 
 interface Props {
   project: Project
+  skills: Skill[]
+  update: () => Promise<void>
 }
 
-export function ProjectCard ({ project }: Props): JSX.Element {
+export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
   const [isMobileHover, setMobileHover] = useState('')
   const [isDesktopHover, setDesktopHover] = useState('')
   const baseImageStyle = 'absolute border-stone-200 border-[1px] rounded ease-in-out duration-200'
@@ -28,9 +32,8 @@ export function ProjectCard ({ project }: Props): JSX.Element {
       }
     })
   }
-  console.log(project.colors)
   return (
-        <article className={'flex flex-col gap-4'}>
+        <article className={'flex flex-col gap-4 py-2'}>
           <section className='flex relative'>
            <div className='w-36 h-48'>
               <img
@@ -72,6 +75,15 @@ export function ProjectCard ({ project }: Props): JSX.Element {
             <Link href={project.frontEndRepo} className='text-cyan-500 text-base hover:underline'>{project.frontEndRepo}</Link>
             </label>
             }
+          </section>
+          <section>
+            {
+              project.technologies.length > 0 &&
+              project.technologies.map(technology => (
+                <TechnologyCard key={technology.name} technology={technology}/>
+              ))
+            }
+            <TechnologyForm id={project.id} skills={skills} update={update}/>
           </section>
         </article>
   )
