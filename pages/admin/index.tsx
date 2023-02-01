@@ -13,7 +13,7 @@ interface Props {
   projects: Project[]
 }
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  const skills = await api.getSkills()
+  const skills = await (await api.getSkills()).sort((s1, s2) => s1.name.localeCompare(s2.name))
   const projects = await api.getProjects()
   return {
     props: {
@@ -35,7 +35,7 @@ const AdminPage: NextPage<Props> = ({ skills, projects }: Props) => {
                 <Navbar />
                 <Sidebar />
                 <AdminInfo />
-                <Projects initialProjects={projects}/>
+                <Projects initialProjects={projects} skills={skills}/>
                 <Skills initialSkills={skills}/>
             </main>
         </>

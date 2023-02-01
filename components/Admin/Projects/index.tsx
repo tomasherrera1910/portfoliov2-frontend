@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Project } from '../../../utils/types'
+import { Project, Skill } from '../../../utils/types'
 import { ProjectCard } from './ProjectCard'
 import { faFolder, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,8 +8,9 @@ import api from '../../../utils/api'
 
 interface Props {
   initialProjects: Project[]
+  skills: Skill[]
 }
-export function Projects ({ initialProjects }: Props): JSX.Element {
+export function Projects ({ initialProjects, skills }: Props): JSX.Element {
   const [projects, setProjects] = useState(initialProjects)
   const [isFormOpen, setFormOpen] = useState(false)
   const updateProjects = async (): Promise<void> => {
@@ -28,7 +29,7 @@ export function Projects ({ initialProjects }: Props): JSX.Element {
             <ProjectsForm open={isFormOpen} handleOpen={handleForm} update={updateProjects}/>
             <section className="flex flex-wrap gap-2 py-2">
             {projects.map((project) => (
-              <ProjectCard key={project.id} project={project}/>
+              <ProjectCard key={project.id} project={project} skills={skills} update={updateProjects}/>
             ))}
             </section>
         </section>
