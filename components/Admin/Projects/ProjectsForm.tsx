@@ -47,7 +47,7 @@ export default function ProjectsForm ({ open, handleOpen, update, edit, INITIAL_
       }
     }
   }
-  console.log(form)
+
   return (
       <Modal open={open}>
           <div className={`${displayModal} fixed top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] bg-gradient-to-bl from-slate-900 via-cyan-900 to-blue-900 py-12 px-16 rounded border-2 border-cyan-600 max-h-[80vh] overflow-auto`}>
