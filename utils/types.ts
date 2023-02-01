@@ -29,3 +29,9 @@ export interface ProjectImage {
   mobile: string
   desktop: string
 }
+
+export interface ProjectSkillUnion {
+  id: number
+  skillId: number
+  projectId: number
+}
