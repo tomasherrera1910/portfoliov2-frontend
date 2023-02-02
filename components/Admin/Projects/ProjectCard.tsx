@@ -75,13 +75,14 @@ export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
             <Link href={project.frontEndRepo} className='text-cyan-500 text-base hover:underline'>{project.frontEndRepo}</Link>
             </label>
             }
-          </section>
-          <section>
             {
               project.technologies.length > 0 &&
-              project.technologies.map(technology => (
+              <>
+              <h3 className='font-bold'>Technologies</h3>
+              {project.technologies.map(technology => (
                 <TechnologyCard key={technology.name} technology={technology}/>
-              ))
+              ))}
+              </>
             }
             <TechnologyForm id={project.id} skills={skills} update={update}/>
           </section>
