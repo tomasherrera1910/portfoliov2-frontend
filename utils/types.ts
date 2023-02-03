@@ -23,7 +23,7 @@ export interface Project {
   backendRepo?: string
   frontEndRepo?: string
   deployURL: string
-  technologies: Array<Partial<Skill>>
+  technologies: Technology[]
 }
 export interface ProjectImage {
   mobile: string
@@ -34,4 +34,12 @@ export interface ProjectSkillUnion {
   id: number
   skillId: number
   projectId: number
+}
+
+export interface Technology {
+  id: number
+  name: string
+  imageURL: string
+  technology?: string
+  ProjectsTechnologies: ProjectSkillUnion
 }
