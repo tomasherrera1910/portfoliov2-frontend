@@ -80,7 +80,7 @@ export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
               <>
               <h3 className='font-bold'>Technologies</h3>
               {project.technologies.map(technology => (
-                <TechnologyCard key={technology.name} technology={technology}/>
+                <TechnologyCard key={technology.name} technology={technology} update={update}/>
               ))}
               </>
             }
