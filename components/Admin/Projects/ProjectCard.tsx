@@ -32,15 +32,16 @@ export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
       }
     })
   }
+  console.log(project)
   return (
         <article className={'flex flex-col gap-4 py-2'}>
           <section className='flex relative'>
-           <div className='w-36 h-48'>
+           <div className='w-28 h-48'>
               <img
               id={`mobile-${project.name}`}
               src={project.images.mobile}
               alt={`Mobile Image from project: ${project.name}`}
-              className={`${baseImageStyle} top-0 left-0 h-48 ${isMobileHover}`}
+              className={`${baseImageStyle} top-0 left-0 h-48 w-24 object-cover ${isMobileHover}`}
               onMouseEnter={handleMobileHover}
               onMouseLeave={handleMobileHover}
               />
@@ -48,15 +49,15 @@ export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
               id={`desktop-${project.name}`}
               src={project.images.desktop}
               alt={`Desktop Image from project: ${project.name}`}
-              className={`${baseImageStyle} -bottom-3 left-6 w-48 ${isDesktopHover}`}
+              className={`${baseImageStyle} -bottom-3 left-6 w-48 h-28 object-cover ${isDesktopHover}`}
               onMouseEnter={handleDesktopHover}
               onMouseLeave={handleDesktopHover}
               />
-            </div>
-          <h1 className='text-3xl font-bold text-center'>{project.name}</h1>
+           </div>
+          <h1 className='text-2xl font-bold max-w-xs'>{project.name}</h1>
           </section>
           <section>
-            <p className='text-sm text-slate-300'>{project.description}</p>
+            <p className='text-sm text-slate-300 max-w-xs'>{project.description}</p>
             <label className='flex items-center text-xs text-slate-300 gap-1'>
               Deploy URL:
             <Link href={project.deployURL} className='text-cyan-500 text-base hover:underline'>{project.deployURL}</Link>
