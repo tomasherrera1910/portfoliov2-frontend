@@ -34,7 +34,6 @@ export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
       }
     })
   }
-  console.log(project)
   return (
         <article className={'flex flex-col gap-4 py-2'}>
           <section className='flex relative'>
@@ -56,7 +55,7 @@ export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
               onMouseLeave={handleDesktopHover}
               />
            </div>
-          <h1 className='text-2xl font-bold max-w-xs'>{project.name}</h1>
+          <h1 className='text-2xl font-bold max-w-[12rem]'>{project.name}</h1>
           </section>
           <section>
             <p className='text-sm text-slate-300 max-w-xs'>{project.description}</p>
