@@ -18,7 +18,7 @@ const INITIAL_FORM_ADD = {
   name: '',
   description: '',
   images: { desktop: '', mobile: '' },
-  colors: ['', '', ''],
+  colors: ['#000000', '#111111', '#ffffff'],
   backendRepo: '',
   frontEndRepo: '',
   deployURL: ''
