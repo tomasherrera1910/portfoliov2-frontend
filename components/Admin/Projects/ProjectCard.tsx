@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { Project, Skill } from '../../../utils/types'
 import { TechnologyCard } from './TechnologyCard'
 import { TechnologyForm } from './TechnologyForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
   project: Project
@@ -86,6 +88,16 @@ export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
               </>
             }
             <TechnologyForm id={project.id} skills={skills} update={update}/>
+            <div className='flex gap-2'>
+              <button className={'bg-red-700 flex gap-1 text-sm p-1 rounded duration-300 ease-in-out hover:bg-red-900'}>
+                Delete Project
+                <FontAwesomeIcon icon={faTrash} className='w-4'/>
+              </button>
+              <button className={'bg-blue-700 flex gap-1 text-sm p-1 rounded duration-300 ease-in-out hover:bg-blue-900'}>
+                Edit Project
+                <FontAwesomeIcon icon={faPenToSquare} className='w-4'/>
+              </button>
+            </div>
           </section>
         </article>
   )
