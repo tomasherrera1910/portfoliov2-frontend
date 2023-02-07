@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Project, Skill } from '../../../utils/types'
-import { TechnologyCard } from './TechnologyCard'
 import { TechnologyForm } from './TechnologyForm'
 import ProjectsForm from './ProjectsForm'
 import Modal from '../../Modal'
@@ -9,6 +8,7 @@ import api from '../../../utils/api'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { ProjectInfo } from './ProjectInfo'
+import { TechnologyList } from './TechnologyList'
 
 interface Props {
   project: Project
@@ -79,15 +79,7 @@ export function ProjectCard ({ project, skills, update }: Props): JSX.Element {
         </section>
         <section>
           <ProjectInfo project={project}/>
-          {
-            project.technologies.length > 0 &&
-            <>
-            <h3 className='font-bold'>Technologies</h3>
-            {project.technologies.map(technology => (
-              <TechnologyCard key={technology.name} technology={technology} update={update}/>
-            ))}
-            </>
-          }
+          <TechnologyList project={project} update={update}/>
           <TechnologyForm id={project.id} skills={skills} update={update}/>
           <div className='flex gap-2'>
             <button onClick={handleDeleteModal} className={'bg-red-700 flex gap-1 text-sm p-1 rounded duration-300 ease-in-out hover:bg-red-900'}>
