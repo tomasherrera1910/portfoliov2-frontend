@@ -1,10 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import { AdminInfo } from '../../components/Admin/AdminInfo'
-import { Navbar } from '../../components/Admin/Navbar'
-import { Projects } from '../../components/Admin/Projects'
-import { Sidebar } from '../../components/Admin/Sidebar'
-import { Skills } from '../../components/Admin/Skills'
+import AdminLanding from '../../components/Admin/AdminLanding'
 import api from '../../utils/api'
 import { Project, Skill } from '../../utils/types'
 
@@ -32,11 +28,7 @@ const AdminPage: NextPage<Props> = ({ skills, projects }: Props) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className='min-h-screen bg-neutral-900 text-white pr-4 pt-16 pl-12 min-[600px]:pl-16 scroll-smooth'>
-                <Navbar />
-                <Sidebar />
-                <AdminInfo />
-                <Projects initialProjects={projects} skills={skills}/>
-                <Skills initialSkills={skills}/>
+                <AdminLanding initialProjects={projects} initialSkills={skills}/>
             </main>
         </>
   )
