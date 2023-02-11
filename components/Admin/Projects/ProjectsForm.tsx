@@ -23,11 +23,14 @@ const INITIAL_FORM_ADD = {
   frontEndRepo: '',
   deployURL: ''
 }
-
+function mapProject (project: Partial<Project>): Partial<Project> {
+  return Object.fromEntries(
+    Object.entries(project)
+      .map(([attribute, value]) => [attribute, value === null ? '' : value]))
+}
 export default function ProjectsForm ({ open, handleOpen, update, edit, INITIAL_FORM = INITIAL_FORM_ADD }: Props): JSX.Element {
-  const FORM = { ...INITIAL_FORM_ADD, ...INITIAL_FORM }
   const { errorMessage, handleChange, postForm, putForm, form, setError } = useForm({
-    INITIAL_FORM: FORM,
+    INITIAL_FORM: mapProject(INITIAL_FORM),
     handleOpen,
     update,
     post: api.createProject,
