@@ -25,8 +25,9 @@ const INITIAL_FORM_ADD = {
 }
 
 export default function ProjectsForm ({ open, handleOpen, update, edit, INITIAL_FORM = INITIAL_FORM_ADD }: Props): JSX.Element {
+  const FORM = { ...INITIAL_FORM_ADD, ...INITIAL_FORM }
   const { errorMessage, handleChange, postForm, putForm, form, setError } = useForm({
-    INITIAL_FORM,
+    INITIAL_FORM: FORM,
     handleOpen,
     update,
     post: api.createProject,
