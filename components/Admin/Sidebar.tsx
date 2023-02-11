@@ -1,48 +1,10 @@
-import { useState } from 'react'
-import { useToggle } from '../../hooks/useToggle'
-import { faArrowLeft, faArrowRight, faBook, faFolder, faHome } from '@fortawesome/free-solid-svg-icons'
-import { IButtonAside } from '../../utils/types'
+import useSidebar from '../../hooks/useSidebar'
 import ButtonSidebar from './ButtonSidebar'
-
-export function Sidebar (): JSX.Element {
-  const { toggle, handleToggle } = useToggle()
-  const [activeButton, setActiveButton] = useState('INITIAL_TEXT')
-  const asideWidth = toggle ? 'w-40' : 'w-6 min-[600px]:w-12'
-  const BUTTONS: IButtonAside[] = [
-    {
-      icon: faArrowRight,
-      icon2: faArrowLeft,
-      text: '',
-      handleClick: handleToggle
-    },
-    {
-      icon: faHome,
-      icon2: null,
-      text: 'Admin Home',
-      handleClick: () => {
-        handleActive('Admin Home')
-      }
-    },
-    {
-      icon: faFolder,
-      icon2: null,
-      text: 'Projects',
-      handleClick: () => {
-        handleActive('Projects')
-      }
-    },
-    {
-      icon: faBook,
-      icon2: null,
-      text: 'Skills',
-      handleClick: () => {
-        handleActive('Skills')
-      }
-    }
-  ]
-  const handleActive = (buttonText: string): void => {
-    setActiveButton(buttonText)
-  }
+interface Props {
+  adminInfoHeight?: number
+}
+export function Sidebar ({ adminInfoHeight }: Props): JSX.Element {
+  const { BUTTONS, activeButton, asideWidth, toggle } = useSidebar()
 
   return (
         <aside className={'h-screen bg-black bg-opacity-25 backdrop-blur-sm fixed top-14 left-0 border-r-[1px] z-10 border-gray-500 flex flex-col items-center ease-linear duration-150 ' + asideWidth}>
