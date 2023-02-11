@@ -1,6 +1,9 @@
-export function AdminInfo (): JSX.Element {
+import { forwardRef, MutableRefObject } from 'react'
+
+// eslint-disable-next-line react/display-name
+export const AdminInfo = forwardRef((props, ref): JSX.Element => {
   return (
-    <div>
+    <div ref={ref as MutableRefObject<HTMLDivElement>}>
       <h1 className="text-3xl font-bold my-4">Bienvenido!</h1>
       <h3 className="text-xl">En este apartado vas a poder administrar/gestionar todas las Habilidades y Proyectos que se van a mostrar en tu portfolio!</h3>
       <h2 className="text-2xl font-bold mt-4 mb-2">Podrás:</h2>
@@ -14,4 +17,4 @@ export function AdminInfo (): JSX.Element {
       </ul>
     </div>
   )
-}
+})
