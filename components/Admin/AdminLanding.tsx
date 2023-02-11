@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Project, Skill } from '../../utils/types'
 import { AdminInfo } from './AdminInfo'
 import { Navbar } from './Navbar'
@@ -10,13 +11,17 @@ interface Props {
   initialSkills: Skill[]
 }
 export default function AdminLanding ({ initialProjects, initialSkills }: Props): JSX.Element {
+  const AdminInfoRef = useRef<HTMLDivElement>()
+  console.log(AdminInfoRef)
+  // const ProjectsRef = useRef()
+  // const SkillsRef = useRef()
   return (
         <>
-            <Navbar />
-            <Sidebar />
-            <AdminInfo/>
-            <Projects initialProjects={initialProjects} skills={initialSkills}/>
-            <Skills initialSkills={initialSkills}/>
+          <Navbar />
+          <Sidebar />
+          <AdminInfo ref={AdminInfoRef}/>
+          <Projects initialProjects={initialProjects} skills={initialSkills}/>
+          <Skills initialSkills={initialSkills}/>
         </>
   )
 }
