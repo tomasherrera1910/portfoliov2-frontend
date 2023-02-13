@@ -7,14 +7,24 @@ interface Props {
   handleClick: () => void
   toggle: boolean
   active: string
+  nav: string | null
 }
 
-export default function ButtonSidebar ({ icon, text, toggle, handleClick, active }: Props): JSX.Element {
-  const buttonStyle = 'flex gap-2 items-center justify-center w-full py-4 ease-linear duration-200 hover:bg-slate-800 hover:text-gray-200'
+export default function ButtonSidebar ({ icon, text, toggle, handleClick, active, nav }: Props): JSX.Element {
+  const asideWidth = toggle ? 'w-40' : 'w-8 min-[600px]:w-12'
+  const buttonStyle = 'flex gap-2 items-center justify-center py-4 px-2 ease-linear duration-200 cursor-pointer hover:text-gray-500'
   return (
-        <button onClick={handleClick} className={`${buttonStyle} ${active}`}>
-                <FontAwesomeIcon icon={icon} className="w-4 min-[600px]:w-6"/>
-                {toggle && text}
+    <>
+      {
+        (nav != null)
+          ? <a onClick={handleClick} className={`${buttonStyle} ${asideWidth} ${active}`} href={nav}>
+          <FontAwesomeIcon icon={icon} className="w-4 min-[600px]:w-6"/>
+          {toggle && text}
+        </a>
+          : <button onClick={handleClick} className={`${buttonStyle} ${asideWidth} ${active}`}>
+            <FontAwesomeIcon icon={icon} className="w-4 min-[600px]:w-6"/>
         </button>
+      }
+    </>
   )
 }
