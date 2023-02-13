@@ -7,7 +7,8 @@ export const getBUTTONS = (handleToggle: () => void, handleActive: (buttonText: 
       icon: faArrowRight,
       icon2: faArrowLeft,
       text: '',
-      handleClick: handleToggle
+      handleClick: handleToggle,
+      nav: null
     },
     {
       icon: faHome,
@@ -15,7 +16,8 @@ export const getBUTTONS = (handleToggle: () => void, handleActive: (buttonText: 
       text: 'Admin Home',
       handleClick: () => {
         handleActive('Admin Home')
-      }
+      },
+      nav: '#adminInfo'
     },
     {
       icon: faFolder,
@@ -23,7 +25,8 @@ export const getBUTTONS = (handleToggle: () => void, handleActive: (buttonText: 
       text: 'Projects',
       handleClick: () => {
         handleActive('Projects')
-      }
+      },
+      nav: '#projects'
     },
     {
       icon: faBook,
@@ -31,7 +34,8 @@ export const getBUTTONS = (handleToggle: () => void, handleActive: (buttonText: 
       text: 'Skills',
       handleClick: () => {
         handleActive('Skills')
-      }
+      },
+      nav: '#skills'
     }
   ]
 )

@@ -5,6 +5,7 @@ export interface IButtonAside {
   icon2: IconDefinition | null
   text: string
   handleClick: () => void
+  nav: string | null
 }
 
 export interface Skill {
