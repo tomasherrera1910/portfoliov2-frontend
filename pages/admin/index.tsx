@@ -27,7 +27,7 @@ const AdminPage: NextPage<Props> = ({ skills, projects }: Props) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className='min-h-screen bg-neutral-900 text-white pr-4 pt-16 pl-12 min-[600px]:pl-16 scroll-smooth'>
+            <main className='min-h-screen bg-neutral-900 text-white pr-4 pl-12 min-[600px]:pl-16'>
                 <AdminLanding initialProjects={projects} initialSkills={skills}/>
             </main>
         </>
