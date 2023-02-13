@@ -19,7 +19,7 @@ export function Projects ({ initialProjects, skills }: Props): JSX.Element {
   }
   const handleForm = (): void => { setFormOpen(prev => !prev) }
   return (
-        <section className='py-6' id='projects'>
+        <section className='pt-10' id='projects'>
             <h1 className="text-3xl flex items-center gap-4 py-4"><FontAwesomeIcon icon={faFolder} className="w-8"/> Projects</h1>
             <button
             onClick={handleForm}
