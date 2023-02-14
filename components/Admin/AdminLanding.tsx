@@ -12,15 +12,15 @@ interface Props {
 }
 export default function AdminLanding ({ initialProjects, initialSkills }: Props): JSX.Element {
   const adminInfoRef = useRef<HTMLDivElement>()
-  // const ProjectsRef = useRef()
-  // const SkillsRef = useRef()
+  const projectsRef = useRef<HTMLDivElement>()
+  const skillsRef = useRef<HTMLDivElement>()
   return (
         <>
           <Navbar />
           <Sidebar adminInfoHeight={adminInfoRef.current?.offsetHeight} />
           <AdminInfo ref={adminInfoRef}/>
-          <Projects initialProjects={initialProjects} skills={initialSkills}/>
-          <Skills initialSkills={initialSkills}/>
+          <Projects initialProjects={initialProjects} skills={initialSkills} ref={projectsRef}/>
+          <Skills initialSkills={initialSkills} ref={skillsRef}/>
         </>
   )
 }
