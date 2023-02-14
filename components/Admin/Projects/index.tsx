@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { forwardRef, MutableRefObject, useState } from 'react'
 import { Project, Skill } from '../../../utils/types'
 import { ProjectCard } from './ProjectCard'
 import { faFolder, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons'
@@ -10,7 +10,8 @@ interface Props {
   initialProjects: Project[]
   skills: Skill[]
 }
-export function Projects ({ initialProjects, skills }: Props): JSX.Element {
+// eslint-disable-next-line react/display-name
+export const Projects = forwardRef(({ initialProjects, skills }: Props, ref): JSX.Element => {
   const [projects, setProjects] = useState(initialProjects)
   const [isFormOpen, setFormOpen] = useState(false)
   const updateProjects = async (): Promise<void> => {
@@ -19,7 +20,7 @@ export function Projects ({ initialProjects, skills }: Props): JSX.Element {
   }
   const handleForm = (): void => { setFormOpen(prev => !prev) }
   return (
-        <section className='pt-10' id='projects'>
+        <section className='pt-10' ref={ref as MutableRefObject<HTMLDivElement>} id='projects'>
             <h1 className="text-3xl flex items-center gap-4 py-4"><FontAwesomeIcon icon={faFolder} className="w-8"/> Projects</h1>
             <button
             onClick={handleForm}
@@ -35,3 +36,4 @@ export function Projects ({ initialProjects, skills }: Props): JSX.Element {
         </section>
   )
 }
+)
