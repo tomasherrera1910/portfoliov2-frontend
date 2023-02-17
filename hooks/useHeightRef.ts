@@ -1,9 +1,12 @@
-import { useEffect, useRef, useState } from 'react'
+import { MutableRefObject, useEffect, useRef, useState } from 'react'
 
 interface returnHook {
   adminHeight: number
   projectsHeight: number
   skillsHeight: number
+  adminInfoRef: MutableRefObject<HTMLDivElement | undefined>
+  projectsRef: MutableRefObject<HTMLDivElement | undefined>
+  skillsRef: MutableRefObject<HTMLDivElement | undefined>
 }
 const useHeightRef = (): returnHook => {
   const adminInfoRef = useRef<HTMLDivElement>()
@@ -24,7 +27,7 @@ const useHeightRef = (): returnHook => {
     }
   }, [adminInfoRef, projectsRef, skillsRef])
 
-  return { adminHeight, projectsHeight, skillsHeight }
+  return { adminHeight, projectsHeight, skillsHeight, adminInfoRef, projectsRef, skillsRef }
 }
 
 export default useHeightRef
