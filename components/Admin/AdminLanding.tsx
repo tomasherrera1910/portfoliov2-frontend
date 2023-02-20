@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import useSidebar from '../../hooks/useSidebar'
 import { Project, Skill } from '../../utils/types'
 import { AdminInfo } from './AdminInfo'
 import { Navbar } from './Navbar'
@@ -11,27 +11,21 @@ interface Props {
   initialSkills: Skill[]
 }
 export default function AdminLanding ({ initialProjects, initialSkills }: Props): JSX.Element {
-  const adminInfoRef = useRef<HTMLDivElement>()
-  const projectsRef = useRef<HTMLDivElement>()
-  const skillsRef = useRef<HTMLDivElement>()
-  const [adminHeight, setAdminHeight] = useState(0)
-  const [projectsHeight, setProjectsHeight] = useState(0)
-  const [skillsHeight, setSkillsHeight] = useState(0)
-  useEffect(() => {
-    if (adminInfoRef.current != null) {
-      setAdminHeight(adminInfoRef.current.offsetHeight)
-    }
-    if (projectsRef.current != null) {
-      setProjectsHeight(projectsRef.current.offsetHeight)
-    }
-    if (skillsRef.current != null) {
-      setSkillsHeight(skillsRef.current.offsetHeight)
-    }
-  }, [adminInfoRef, projectsRef, skillsRef])
+  const {
+    BUTTONS,
+    activeButton,
+    adminHeight,
+    adminInfoRef,
+    projectsHeight,
+    projectsRef,
+    skillsHeight,
+    skillsRef,
+    toggle
+  } = useSidebar()
   return (
         <>
           <Navbar />
-          <Sidebar adminInfoHeight={adminHeight} projectsHeight={projectsHeight} skillsHeight={skillsHeight}/>
+          <Sidebar BUTTONS={BUTTONS} activeButton={activeButton} adminHeight={adminHeight} projectsHeight={projectsHeight} skillsHeight={skillsHeight} toggle={toggle}/>
           <AdminInfo ref={adminInfoRef}/>
           <Projects initialProjects={initialProjects} skills={initialSkills} ref={projectsRef}/>
           <Skills initialSkills={initialSkills} ref={skillsRef}/>
