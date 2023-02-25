@@ -30,8 +30,8 @@ export default function InputPassword ({ passwordInput, handlePasswordInput }: P
                 className="absolute right-0 py-3 pr-2"
                 onClick={handleInputType}
                 type="button">
-                   {inputType === 'password' && <FontAwesomeIcon icon={faEye} className="h-4"/>}
-                   {inputType === 'text' && <FontAwesomeIcon icon={faEyeSlash} className="h-4"/>}
+                   {inputType === 'password' && <FontAwesomeIcon icon={faEyeSlash} className="h-4"/>}
+                   {inputType === 'text' && <FontAwesomeIcon icon={faEye} className="h-4"/>}
                 </button>
             </section>
         </label>
