@@ -25,17 +25,21 @@ const useSidebar = (): SidebarProps => {
   }
   const handleScroll = (): void => {
     const position = Math.ceil(window.scrollY)
-    console.log({ position, adminHeight, projectsHeight, skillsHeight })
-    if (position < adminHeight) handleActive('Admin Home')
-    else if (position >= adminHeight && position < adminHeight + projectsHeight) handleActive('Projects')
-    else if (position >= adminHeight + projectsHeight && position <= adminHeight + projectsHeight + skillsHeight)handleActive('Skills')
+    const maxScroll = window.document.documentElement.scrollHeight - window.innerHeight
+    const projectsTotalHeight = adminHeight + projectsHeight
+    const skillsTotalHeight = projectsTotalHeight + skillsHeight
+    console.log({ position, adminHeight, projectsHeight, skillsHeight, maxScroll })
+    if (position === maxScroll) handleActive('Skills')
+    else if (position < adminHeight - 40) handleActive('Admin Home')
+    else if (position >= adminHeight && position < projectsTotalHeight - 40) handleActive('Projects')
+    else if (position >= adminHeight + projectsHeight && position <= skillsTotalHeight) handleActive('Skills')
   }
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [adminHeight, projectsHeight, skillsHeight])
   const BUTTONS = getBUTTONS(handleToggle, handleActive)
   return { BUTTONS, activeButton, toggle, adminHeight, projectsHeight, skillsHeight, adminInfoRef, projectsRef, skillsRef }
 }
