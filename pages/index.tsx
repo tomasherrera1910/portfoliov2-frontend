@@ -18,7 +18,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
   }
 }
 const Home: NextPage<Props> = ({ skills, projects }: Props) => {
-  console.log({ skills }, { projects })
   return (
         <>
             <Head>

@@ -28,7 +28,6 @@ const useSidebar = (): SidebarProps => {
     const maxScroll = window.document.documentElement.scrollHeight - window.innerHeight
     const projectsTotalHeight = adminHeight + projectsHeight
     const skillsTotalHeight = projectsTotalHeight + skillsHeight
-    console.log({ position, adminHeight, projectsHeight, skillsHeight, maxScroll })
     if (position === maxScroll) handleActive('Skills')
     else if (position < adminHeight - 40) handleActive('Admin Home')
     else if (position >= adminHeight && position < projectsTotalHeight - 40) handleActive('Projects')
