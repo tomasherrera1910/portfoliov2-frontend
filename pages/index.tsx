@@ -1,5 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
+import { Projects } from '../components/Projects'
 import api from '../utils/api'
 import { Project, Skill } from '../utils/types'
 
@@ -28,6 +29,7 @@ const Home: NextPage<Props> = ({ skills, projects }: Props) => {
             </Head>
             <main className='min-h-screen bg-neutral-900 text-white pr-4 pl-12 min-[600px]:pl-16'>
                 Probando home
+                <Projects projects={projects}/>
             </main>
         </>
   )
