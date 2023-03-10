@@ -6,9 +6,9 @@ interface Props {
 }
 export function Projects ({ projects }: Props): JSX.Element {
   return (
-    <section>
+    <section className='flex flex-col items-center'>
         <h3>Mis proyectos</h3>
-        <section className='flex flex-col gap-2'>
+        <section className='flex flex-col gap-2 px-4'>
         {
             projects.map((project) => {
               return <ProjectCard key={project.id} project={project}/>
