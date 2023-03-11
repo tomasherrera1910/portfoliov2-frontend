@@ -4,7 +4,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { Project } from '../../utils/types'
-
+import { ProjectImages } from '../Admin/Projects/ProjectImages'
 interface Props {
   project: Project
 }
@@ -13,9 +13,8 @@ export default function ProjectCard ({ project }: Props): JSX.Element {
   return (
         <article className='flex flex-1 justify-center items-center p-1 rounded-sm' style={{ background: `radial-gradient(circle, ${project.colors[0]} 0%, ${project.colors[1]} 100%)` }}>
           <div className={'flex-1 bg-black bg-opacity-80 flex gap-3 rounded-sm p-5 ease-linear duration-200 hover:bg-opacity-60'}>
-            <section>
-                <img src={project.images.mobile} alt={`${project.name} Image Mobile`} className='w-24 h-36 object-contain'/>
-                <img src={project.images.desktop} alt={`${project.name} Image Desktop`} className='h-24 w-48 object-contain'/>
+            <section className='w-56 relative'>
+              <ProjectImages desktopImage={project.images.desktop} mobileImage={project.images.mobile} name={project.name}/>
             </section>
             <div className='flex flex-col grow gap-3'>
               <section>
@@ -33,7 +32,7 @@ export default function ProjectCard ({ project }: Props): JSX.Element {
               </ul>
               </section>
               <p>{project.description}</p>
-              <div className='flex justify-around'>
+              <footer className='flex justify-around grow items-center'>
               {(project.backendRepo != null) &&
               <Link href={project.backendRepo} className='flex gap-2 items-center rounded p-1 bg-opacity-50 shadow-sm ease-linear duration-150 hover:scale-105' style={{ background: `radial-gradient(circle, ${project.colors[1]} 0%, ${project.colors[0]} 100%)` }}>
                 <span>Backend</span>
@@ -49,7 +48,7 @@ export default function ProjectCard ({ project }: Props): JSX.Element {
                 <span>Deploy</span>
                 <FontAwesomeIcon icon={faLink} width={20}/>
               </Link>}
-              </div>
+              </footer>
             </div>
            </div>
         </article>
