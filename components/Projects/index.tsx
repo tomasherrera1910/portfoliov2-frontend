@@ -8,9 +8,9 @@ interface Props {
 }
 export function Projects ({ projects, skills }: Props): JSX.Element {
   return (
-    <section className='flex gap-4 items-center'>
+    <section className='w-full flex gap-4 justify-center'>
         <ProjectsFilter skills={skills}/>
-        <section className='flex flex-col gap-2 px-4 grow'>
+        <section className='flex flex-col gap-2 grow max-w-[720px]'>
         {
             projects.map((project) => {
               return <ProjectCard key={project.id} project={project}/>
