@@ -11,7 +11,7 @@ export function Projects ({ projects, skills }: Props): JSX.Element {
   const { filteredProjects, filterToggle, resetFilters } = useFiltersProjects({ initialProjects: projects })
   return (
     <section className='w-full flex gap-4 justify-center'>
-        <ProjectsFilter skills={skills} filterToggle={filterToggle} resetFilters={resetFilters}/>
+        <ProjectsFilter skills={skills} filterToggle={filterToggle} resetFilters={resetFilters} results={filteredProjects.length}/>
         <section className='flex flex-col gap-2 grow max-w-[720px]'>
         {
             filteredProjects.map((project) => {
