@@ -9,7 +9,13 @@ const useFiltersProjects = ({ initialProjects }: HookParameters) => {
   const [filteredProjects, setFilteredProjects] = useState(initialProjects)
 
   const [filters, setFilters] = useState<number[]>([])
-  function resetFilters (): void { setFilters([]) }
+  function resetFilters (): void {
+    const checkboxes = document.querySelectorAll<HTMLInputElement>("input[type='checkbox']")
+    checkboxes.forEach(function (checkbox) {
+      checkbox.checked = false
+    })
+    setFilters([])
+  }
   function filterToggle (id: number): void {
     if (filters.includes(id)) {
       setFilters(prevState => prevState.filter(technologyId => technologyId !== id))
@@ -29,7 +35,7 @@ const useFiltersProjects = ({ initialProjects }: HookParameters) => {
       setFilteredProjects(initialProjects)
     }
   }, [filters])
-  return { filteredProjects, resetFilters, filterToggle }
+  return { filteredProjects, resetFilters, filterToggle, filters }
 }
 
 export default useFiltersProjects
