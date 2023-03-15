@@ -9,8 +9,8 @@ interface Props {
 }
 export default function ProjectsFilter ({ skills, filterToggle, resetFilters }: Props): JSX.Element {
   return (
-        <aside className='flex flex-col self-start min-h-screen gap-1'>
-            <h3 className='flex gap-2'>Filtrar Proyectos <FontAwesomeIcon icon={faFilter} width={20}/></h3>
+        <aside className='flex flex-col self-start min-h-screen gap-1 bg-black bg-opacity-30 p-1 rounded'>
+            <h3 className='flex gap-2 font-bold'>Filtrar Proyectos <FontAwesomeIcon icon={faFilter} width={20}/></h3>
             {
             skills.map(skill => (
                 <label key={skill.id} className='flex gap-1 cursor-pointer'>
