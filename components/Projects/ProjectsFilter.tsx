@@ -1,5 +1,6 @@
-import { faFilter, faFilterCircleXmark } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faClose, faFilter, faFilterCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 import { Skill } from '../../utils/types'
 
 interface Props {
@@ -10,8 +11,16 @@ interface Props {
   filters: number[]
 }
 export default function ProjectsFilter ({ skills, filterToggle, resetFilters, results, filters }: Props): JSX.Element {
+  const [showFilters, setShowFilters] = useState(false)
+  const menuFiltersPosition = showFilters ? 'left-0' : '-left-52'
+  const handleShowFilters = () => {
+    setShowFilters(!showFilters)
+  }
   return (
-        <aside className='flex flex-col self-start min-h-screen gap-1 bg-black bg-opacity-30 p-1 rounded'>
+      <>
+        <button className={`flex items-center w-fit p-1 gap-1 font-bold lg:hidden ${showFilters ? 'hidden' : ''}`} onClick={handleShowFilters}>Abrir Filtros <FontAwesomeIcon icon={faBars} width={14}/></button>
+        <aside className={`flex z-10 flex-col self-start min-h-screen gap-1 bg-black bg-opacity-80 p-1 rounded fixed ease-in-out duration-200 top-0 ${menuFiltersPosition} lg:relative lg:left-0`}>
+            <button className={'text-red-700 flex items-center gap-1 p-1 font-bold lg:hidden'} onClick={handleShowFilters}>Cerrar Filtros <FontAwesomeIcon icon={faClose} width={12}/></button>
             <h3 className='flex gap-2 font-bold'>Filtrar Proyectos <FontAwesomeIcon icon={faFilter} width={20}/></h3>
             <div className='flex gap-1'>
             <span className='opacity-75 text-sm'>{results} resultados</span>
@@ -33,5 +42,6 @@ export default function ProjectsFilter ({ skills, filterToggle, resetFilters, re
             ))
             }
         </aside>
+      </>
   )
 }
