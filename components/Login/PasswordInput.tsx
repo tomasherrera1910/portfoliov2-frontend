@@ -24,7 +24,7 @@ export default function InputPassword ({ passwordInput, handlePasswordInput }: P
                     type={inputType}
                     value={passwordInput}
                     onChange={handlePasswordInput}
-                    className="bg-black bg-opacity-60 rounded py-2 pl-4 pr-8 outline-none focus:outline-slate-400"
+                    className="bg-black bg-opacity-40 rounded py-2 pl-4 pr-8 outline-none focus:outline-slate-400"
                 />
                 <button
                 className="absolute right-0 py-3 pr-2"
