@@ -9,20 +9,20 @@ const INITIAL_FORM = {
 }
 export function Contact (): JSX.Element {
   const [inputsFields, setInputFields] = useState(INITIAL_FORM)
-  const handleChangeInput = (input: string, evt: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeInput = (input: string, value: string) => {
     setInputFields({
       ...inputsFields,
-      [input]: evt.target.value
+      [input]: value
     })
   }
   return (
       <section className='flex flex-col gap-2 my-8'>
         <h3>CONTACTO</h3>
         <form>
-          <ContactInput placeholder={'Nombre'} inputValue={inputsFields.name} handleChange={(evt: React.ChangeEvent<HTMLInputElement>) => { handleChangeInput('name', evt) }}/>
-          <ContactInput placeholder={'Email'} inputValue={inputsFields.email} handleChange={(evt: React.ChangeEvent<HTMLInputElement>) => { handleChangeInput('email', evt) }}/>
-          <ContactInput placeholder={'Asunto'} inputValue={inputsFields.subject} handleChange={(evt: React.ChangeEvent<HTMLInputElement>) => { handleChangeInput('subject', evt) }}/>
-          <ContactInput placeholder={'Mensaje'} inputValue={inputsFields.message} handleChange={(evt: React.ChangeEvent<HTMLInputElement>) => { handleChangeInput('message', evt) }}/>
+          <ContactInput placeholder={'Nombre'} inputValue={inputsFields.name} handleChange={(value: string) => { handleChangeInput('name', value) }}/>
+          <ContactInput placeholder={'Email'} inputValue={inputsFields.email} handleChange={(value: string) => { handleChangeInput('email', value) }}/>
+          <ContactInput placeholder={'Asunto'} inputValue={inputsFields.subject} handleChange={(value: string) => { handleChangeInput('subject', value) }}/>
+          <ContactInput area placeholder={'Mensaje'} inputValue={inputsFields.message} handleChange={(value: string) => { handleChangeInput('message', value) }}/>
           <button>ENVIAR</button>
         </form>
       </section>
