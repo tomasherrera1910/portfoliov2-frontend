@@ -1,6 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import { Projects } from '../components/Projects'
+import { Contact } from '../components/Contact'
+// import { Projects } from '../components/Projects'
 import api from '../utils/api'
 import { Project, Skill } from '../utils/types'
 
@@ -28,7 +29,8 @@ const Home: NextPage<Props> = ({ skills, projects }: Props) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className='min-h-screen bg-neutral-900 text-white flex flex-col px-4 py-2'>
-                <Projects projects={projects} skills={skills}/>
+                {/* <Projects projects={projects} skills={skills}/> */}
+                <Contact/>
             </main>
         </>
   )
