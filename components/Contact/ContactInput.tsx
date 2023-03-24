@@ -9,7 +9,6 @@ interface Props {
 export default function ContactInput ({ placeholder, inputValue, handleChange, area }: Props): JSX.Element {
   const inputId = useId()
   const [focus, setFocus] = useState(false)
-  console.log(area)
   const handleFocus = () => {
     setFocus(true)
   }

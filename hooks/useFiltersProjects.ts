@@ -25,8 +25,6 @@ const useFiltersProjects = ({ initialProjects }: HookParameters) => {
   }
 
   useEffect(() => {
-    console.log({ filters, filteredProjects })
-
     if (filters.length > 0) {
       setFilteredProjects(initialProjects.filter(project => {
         return project.technologies.some(({ id }) => filters.includes(id))
