@@ -5,6 +5,7 @@ import CustomHead from '../components/Head'
 import api from '../utils/api'
 import { Project, Skill } from '../utils/types'
 import { Education } from '../components/Education'
+import { Footer } from '../components/Footer'
 
 interface Props {
   skills: Skill[]
@@ -24,13 +25,16 @@ const Home: NextPage<Props> = ({ skills, projects }: Props) => {
   return (
         <>
           <CustomHead title='Portfolio Tomás Herrera'/>
-          <main className='min-h-screen bg-neutral-900 text-white flex flex-col px-4 py-2 items-center'>
-              {/* <Projects projects={projects} skills={skills}/> */}
-              <section className='flex flex-col gap-16 my-8 lg:flex-row lg:justify-between max-w-7xl'>
-                <Education/>
-                <Contact/>
-              </section>
-          </main>
+          <div className='min-h-screen flex flex-col'>
+            <main className='grow bg-neutral-900 text-white flex flex-col px-4 py-2 items-center'>
+                {/* <Projects projects={projects} skills={skills}/> */}
+                <section className='flex flex-col gap-16 my-8 lg:flex-row lg:justify-between max-w-7xl'>
+                  <Education/>
+                  <Contact/>
+                </section>
+            </main>
+            <Footer/>
+          </div>
         </>
   )
 }
