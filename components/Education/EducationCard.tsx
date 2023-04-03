@@ -9,7 +9,7 @@ interface Props {
 export default function EducationCard ({ place }: Props): JSX.Element {
   const { toggle, handleToggle } = useToggle()
   return (
-        <li className="flex gap-1 items-center border-l-[1px] border-l-sky-800 pl-2 duration-200 ease-linear hover:border-l-sky-500">
+        <li className="flex gap-2 items-center border-l-[1px] border-l-sky-800 pl-2 duration-200 ease-linear hover:border-l-sky-500">
             <img src={place.image} alt={`${place.name} LOGO`} className='rounded-full object-cover w-20 h-20'/>
             <aside className="flex flex-col max-w-sm">
             <a href={place.url} target="_blank" rel="noreferrer">
