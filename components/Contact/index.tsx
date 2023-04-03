@@ -19,7 +19,7 @@ export function Contact (): JSX.Element {
     })
   }
   return (
-      <section className='flex flex-col sm:flex-row my-8 sm:justify-center'>
+      <section className='flex flex-col sm:flex-row sm:justify-center'>
         <form className='bg-black bg-opacity-40 rounded-tr-md p-2 sm:grow sm:rounded-bl-md sm:rounded-tr-none max-w-sm' onMouseEnter={handleToggle} onMouseLeave={handleToggle}>
           <h3 className={`text-sky-600 font-roboto font-bold text-3xl sm:text-5xl text-center ${toggle ? 'animate-pulse' : ''}`}>CONTACTAME</h3>
           <section className='md:flex md:gap-2 md:mt-6'>
