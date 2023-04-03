@@ -44,3 +44,12 @@ export interface Technology {
   technology?: string
   ProjectsTechnologies: ProjectSkillUnion
 }
+
+export interface EducationPlace {
+  id: number
+  name: string
+  image: string
+  url: string
+  description: string
+  date: string
+}
