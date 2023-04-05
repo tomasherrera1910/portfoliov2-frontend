@@ -6,6 +6,7 @@ import api from '../utils/api'
 import { Project, Skill } from '../utils/types'
 import { Education } from '../components/Education'
 import { Footer } from '../components/Footer'
+import { Navbar } from '../components/Navbar'
 
 interface Props {
   skills: Skill[]
@@ -26,6 +27,7 @@ const Home: NextPage<Props> = ({ skills, projects }: Props) => {
     <>
       <CustomHead title='Portfolio Tomás Herrera' />
       <div className='min-h-screen flex flex-col'>
+        <Navbar />
         <main className='grow bg-neutral-900 text-white flex flex-col px-4 py-2 items-center justify-center'>
           {/* <Projects projects={projects} skills={skills}/> */}
           <section className='flex flex-col gap-16 my-8 lg:flex-row lg:justify-between max-w-7xl'>

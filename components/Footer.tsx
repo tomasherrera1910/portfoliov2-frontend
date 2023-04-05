@@ -21,7 +21,7 @@ export function Footer (): JSX.Element {
             </a>
             <a
               href='https://www.github.com/tomasherrera1910' target='_blank' rel='noreferrer'
-              className='border-[1px] rounded-full p-2 duration-300 ease-in-out cursor-pointer bg-white text-black border-black grayscale hover:grayscale-0 hover:scale-110'
+              className='border-[1px] rounded-full p-2 duration-300 ease-in-out cursor-pointer bg-white text-black border-black hover:bg-black hover:text-white hover:border-white hover:scale-110'
             >
               <FontAwesomeIcon icon={faGithub as IconProp} className='w-4' />
             </a>
