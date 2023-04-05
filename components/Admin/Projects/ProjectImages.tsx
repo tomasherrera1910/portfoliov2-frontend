@@ -19,23 +19,23 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
     })
   }
   return (
-        <div className='w-28 h-48'>
-          <img
-          id={`mobile-${name}`}
-          src={mobileImage}
-          alt={`Mobile Image from project: ${name}`}
-          className={`${baseImageStyle} top-0 left-0 h-48 w-24 object-cover ${isMobileHover}`}
-          onMouseEnter={() => { handleImageHover(setMobileHover) }}
-          onMouseLeave={() => { handleImageHover(setMobileHover) }}
-          />
-          <img
-          id={`desktop-${name}`}
-          src={desktopImage}
-          alt={`Desktop Image from project: ${name}`}
-          className={`${baseImageStyle} -bottom-3 left-6 w-48 h-28 object-cover ${isDesktopHover}`}
-          onMouseEnter={() => { handleImageHover(setDesktopHover) }}
-          onMouseLeave={() => { handleImageHover(setDesktopHover) }}
-          />
-        </div>
+    <div className='w-28 h-48'>
+      <img
+        id={`mobile-${name}`}
+        src={mobileImage}
+        alt={`Mobile Image from project: ${name}`}
+        className={`${baseImageStyle} top-0 left-0 h-48 w-24 object-cover ${isMobileHover}`}
+        onMouseEnter={() => { handleImageHover(setMobileHover) }}
+        onMouseLeave={() => { handleImageHover(setMobileHover) }}
+      />
+      <img
+        id={`desktop-${name}`}
+        src={desktopImage}
+        alt={`Desktop Image from project: ${name}`}
+        className={`${baseImageStyle} -bottom-3 left-6 w-48 h-28 object-cover ${isDesktopHover}`}
+        onMouseEnter={() => { handleImageHover(setDesktopHover) }}
+        onMouseLeave={() => { handleImageHover(setDesktopHover) }}
+      />
+    </div>
   )
 }

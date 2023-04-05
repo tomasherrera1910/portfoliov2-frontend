@@ -18,12 +18,12 @@ export default function ButtonSidebar ({ icon, text, toggle, handleClick, active
       {
         (nav != null)
           ? <a onClick={handleClick} className={`${buttonStyle} ${asideWidth} ${active}`} href={nav}>
-          <FontAwesomeIcon icon={icon} className="w-4 min-[600px]:w-6"/>
-          {toggle && text}
-        </a>
+            <FontAwesomeIcon icon={icon} className='w-4 min-[600px]:w-6' />
+            {toggle && text}
+          </a>
           : <button onClick={handleClick} className={`${buttonStyle} ${asideWidth} ${active}`}>
-            <FontAwesomeIcon icon={icon} className="w-4 min-[600px]:w-6"/>
-        </button>
+            <FontAwesomeIcon icon={icon} className='w-4 min-[600px]:w-6' />
+          </button>
       }
     </>
   )

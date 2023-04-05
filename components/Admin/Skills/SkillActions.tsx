@@ -32,28 +32,28 @@ export function SkillActions ({ skill, update }: Props): JSX.Element {
   }
   return (
     <>
-        <div className='flex justify-around pt-2 w-full'>
-            <button
-            className={`${actionsButtons} bg-red-900 hover:text-red-900`}
-            onClick={handleDeleteModal}
-            >
-                <FontAwesomeIcon icon={faTrash} className='w-3'/>
-            </button>
-            <button
-            className={`${actionsButtons} bg-blue-900 hover:text-blue-900`}
-            onClick={handleEditModal}
-            >
-                <FontAwesomeIcon icon={faPenToSquare} className='w-3'/>
-            </button>
-        </div>
-        <Modal open={deleteModal}>
-            <ModalConfirm handleClose={handleDeleteModal} handleConfirm={handleDelete}>
-                <h1>
-                    Want you delete the Skill {skill.name} (ID: {skill.id})
-                </h1>
-            </ModalConfirm>
-        </Modal>
-        <SkillsForm open={editModal} handleOpen={handleEditModal} update={update} edit INITIAL_FORM={skill}/>
+      <div className='flex justify-around pt-2 w-full'>
+        <button
+          className={`${actionsButtons} bg-red-900 hover:text-red-900`}
+          onClick={handleDeleteModal}
+        >
+          <FontAwesomeIcon icon={faTrash} className='w-3' />
+        </button>
+        <button
+          className={`${actionsButtons} bg-blue-900 hover:text-blue-900`}
+          onClick={handleEditModal}
+        >
+          <FontAwesomeIcon icon={faPenToSquare} className='w-3' />
+        </button>
+      </div>
+      <Modal open={deleteModal}>
+        <ModalConfirm handleClose={handleDeleteModal} handleConfirm={handleDelete}>
+          <h1>
+            Want you delete the Skill {skill.name} (ID: {skill.id})
+          </h1>
+        </ModalConfirm>
+      </Modal>
+      <SkillsForm open={editModal} handleOpen={handleEditModal} update={update} edit INITIAL_FORM={skill} />
     </>
   )
 }

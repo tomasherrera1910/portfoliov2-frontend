@@ -23,17 +23,17 @@ export function TechnologyForm ({ id, skills, update }: Props): JSX.Element {
       })
   }
   return (
-        <form onSubmit={handleSubmit} className='flex gap-2 py-1'>
-         <select className={`${InputButtonStyle} cursor-pointer text-xs`} onChange={handleSelected}>
-            {skills.map(skill => (
-                <option key={skill.id} value={skill.id}>
-                    {skill.name}
-                </option>
-            ))}
-         </select>
-         <button type='submit' className={`${InputButtonStyle} p-1`}>
-            <FontAwesomeIcon icon={faAdd} className='w-2'/>
-         </button>
-        </form>
+    <form onSubmit={handleSubmit} className='flex gap-2 py-1'>
+      <select className={`${InputButtonStyle} cursor-pointer text-xs`} onChange={handleSelected}>
+        {skills.map(skill => (
+          <option key={skill.id} value={skill.id}>
+            {skill.name}
+          </option>
+        ))}
+      </select>
+      <button type='submit' className={`${InputButtonStyle} p-1`}>
+        <FontAwesomeIcon icon={faAdd} className='w-2' />
+      </button>
+    </form>
   )
 }

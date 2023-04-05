@@ -23,19 +23,19 @@ interface Props {
 // }
 const Home: NextPage<Props> = ({ skills, projects }: Props) => {
   return (
-        <>
-          <CustomHead title='Portfolio Tomás Herrera'/>
-          <div className='min-h-screen flex flex-col'>
-            <main className='grow bg-neutral-900 text-white flex flex-col px-4 py-2 items-center'>
-                {/* <Projects projects={projects} skills={skills}/> */}
-                <section className='flex flex-col gap-16 my-8 lg:flex-row lg:justify-between max-w-7xl'>
-                  <Education/>
-                  <Contact/>
-                </section>
-            </main>
-            <Footer/>
-          </div>
-        </>
+    <>
+      <CustomHead title='Portfolio Tomás Herrera' />
+      <div className='min-h-screen flex flex-col'>
+        <main className='grow bg-neutral-900 text-white flex flex-col px-4 py-2 items-center justify-center'>
+          {/* <Projects projects={projects} skills={skills}/> */}
+          <section className='flex flex-col gap-16 my-8 lg:flex-row lg:justify-between max-w-7xl'>
+            <Education />
+            <Contact />
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }
 export default Home

@@ -4,10 +4,10 @@ import { forwardRef, MutableRefObject } from 'react'
 export const AdminInfo = forwardRef((props, ref): JSX.Element => {
   return (
     <div ref={ref as MutableRefObject<HTMLDivElement>} id='adminInfo' className='pt-16'>
-      <h1 className="text-3xl font-bold my-4">Bienvenido!</h1>
-      <h3 className="text-xl">En este apartado vas a poder administrar/gestionar todas las Habilidades y Proyectos que se van a mostrar en tu portfolio!</h3>
-      <h2 className="text-2xl font-bold mt-4 mb-2">Podrás:</h2>
-      <ul className="list-disc pl-4 text-xl flex flex-col gap-3">
+      <h1 className='text-3xl font-bold my-4'>Bienvenido!</h1>
+      <h3 className='text-xl'>En este apartado vas a poder administrar/gestionar todas las Habilidades y Proyectos que se van a mostrar en tu portfolio!</h3>
+      <h2 className='text-2xl font-bold mt-4 mb-2'>Podrás:</h2>
+      <ul className='list-disc pl-4 text-xl flex flex-col gap-3'>
         <li>Terminaste tu nuevo proyecto? Agregalo rapidamente a la DB a través de un formulario.</li>
         <li>Por fin aprendiste esa tecnología nueva tan buscada por el mercado actual? Agregala a tu porfolio en simples pasos</li>
         <li>No te convenció algo? Editalo.</li>

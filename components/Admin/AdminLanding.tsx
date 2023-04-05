@@ -23,12 +23,12 @@ export default function AdminLanding ({ initialProjects, initialSkills }: Props)
     toggle
   } = useSidebar()
   return (
-        <>
-          <Navbar />
-          <Sidebar BUTTONS={BUTTONS} activeButton={activeButton} adminHeight={adminHeight} projectsHeight={projectsHeight} skillsHeight={skillsHeight} toggle={toggle}/>
-          <AdminInfo ref={adminInfoRef}/>
-          <Projects initialProjects={initialProjects} skills={initialSkills} ref={projectsRef}/>
-          <Skills initialSkills={initialSkills} ref={skillsRef}/>
-        </>
+    <>
+      <Navbar />
+      <Sidebar BUTTONS={BUTTONS} activeButton={activeButton} adminHeight={adminHeight} projectsHeight={projectsHeight} skillsHeight={skillsHeight} toggle={toggle} />
+      <AdminInfo ref={adminInfoRef} />
+      <Projects initialProjects={initialProjects} skills={initialSkills} ref={projectsRef} />
+      <Skills initialSkills={initialSkills} ref={skillsRef} />
+    </>
   )
 }
