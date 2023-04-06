@@ -17,7 +17,7 @@ export default function ContactInput ({ placeholder, inputValue, handleChange, a
   }
   return (
     <div className='relative my-6 md:my-0 md:mb-6'>
-      <label className={`text-neutral-500 absolute font-barlow top-0 left-0 py-1 px-2 duration-200 ease-in-out ${focus.input ? '-top-5 text-xs' : ''} ${focus.label ? 'text-sky-500' : ''} ${focus.input && !focus.label ? 'text-sky-900' : ''}`} htmlFor={inputId}>
+      <label className={`text-neutral-500 absolute font-barlow top-0 left-0 py-1 px-2 duration-200 ease-in-out ${focus.input ? '-top-5 text-xs' : ''} ${focus.label ? 'text-sky-400' : ''} ${focus.input && !focus.label ? 'text-sky-900' : ''}`} htmlFor={inputId}>
         {placeholder}
       </label>
       {area === true

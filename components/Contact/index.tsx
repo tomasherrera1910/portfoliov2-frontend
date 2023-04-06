@@ -17,8 +17,8 @@ export function Contact (): JSX.Element {
     })
   }
   return (
-    <section className='flex flex-col sm:flex-row sm:justify-center'>
-      <form className='bg-black bg-opacity-40 rounded-tr-md p-2 sm:grow sm:rounded-bl-md sm:rounded-tr-none max-w-sm'>
+    <section className='flex flex-col sm:flex-row sm:justify-center z-10'>
+      <form className='bg-black bg-opacity-20 rounded-tr-md p-2 sm:grow sm:rounded-bl-md sm:rounded-tr-none max-w-sm'>
         <h3 className='text-sky-600 font-roboto font-bold text-3xl sm:text-5xl text-center animate-pulse'>CONTACTAME</h3>
         <section className='md:flex md:gap-2 md:mt-6'>
           <ContactInput placeholder='Nombre' inputValue={inputsFields.name} handleChange={(value: string) => { handleChangeInput('name', value) }} />
