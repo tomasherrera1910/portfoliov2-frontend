@@ -8,7 +8,7 @@
     margin: 0 auto;
     /* Adjust as needed */
     animation:
-        typing 8s steps(100, end),
+        typing 6s steps(100, end),
         blink-caret 1s step-end infinite;
 }
 
