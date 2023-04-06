@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         barlow: ['Barlow', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif']
+      },
+      dropShadow: {
+        '3xl-sky': '0 32px 68px rgba(96, 165, 250, 1)'
       }
     }
   },
