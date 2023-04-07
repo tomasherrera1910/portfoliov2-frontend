@@ -7,14 +7,13 @@ export interface IButtonAside {
   handleClick: () => void
   nav: string | null
 }
-
+export type SkillName = 'Javascript' | 'Typescript' | 'Next.js' | 'React' | 'Node.js'
 export interface Skill {
   id: number
-  name: string
+  name: SkillName
   imageURL: string
   technology?: string
 }
-
 export interface Project {
   id: number
   name: string
@@ -24,7 +23,7 @@ export interface Project {
   backendRepo?: string
   frontEndRepo?: string
   deployURL: string
-  technologies: Technology[]
+  technologies: Skill[]
 }
 export interface ProjectImage {
   mobile: string
