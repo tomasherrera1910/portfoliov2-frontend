@@ -8,11 +8,12 @@ export interface IButtonAside {
   nav: string | null
 }
 export type SkillName = 'Javascript' | 'Typescript' | 'Next.js' | 'React' | 'React Native' | 'Node.js' | 'PostgreSQL' | 'MySQL' | 'MongoDB' | 'Express' | 'Sequelize' | 'HTML' | 'CSS' | 'Tailwind CSS' | 'Cypress' | 'Vitest' | 'Jest' | 'React Testing Library'
+export type TechnologyType = 'Fullstack' | 'Frontend' | 'Backend' | 'Database/ORM' | 'Testing'
 export interface Skill {
   id: number
   name: SkillName
   imageURL: string
-  technology?: string
+  technology: TechnologyType
 }
 export interface Project {
   id: number

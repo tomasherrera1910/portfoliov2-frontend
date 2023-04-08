@@ -5,13 +5,13 @@ export const skills: Skill[] = [
     id: 1,
     name: 'Javascript',
     imageURL: 'https://cdn.svgporn.com/logos/javascript.svg',
-    technology: 'Frontend/Backend'
+    technology: 'Fullstack'
   },
   {
     id: 2,
     name: 'Typescript',
     imageURL: 'https://cdn.svgporn.com/logos/typescript-icon.svg',
-    technology: 'Frontend/Backend'
+    technology: 'Fullstack'
   },
   {
     id: 3,
@@ -58,7 +58,7 @@ export const skills: Skill[] = [
   {
     id: 10,
     name: 'Express',
-    imageURL: 'https://cdn.svgporn.com/logos/express.svg',
+    imageURL: '/express-logo.png',
     technology: 'Backend'
   },
   {
