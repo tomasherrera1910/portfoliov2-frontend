@@ -7,7 +7,7 @@ export interface IButtonAside {
   handleClick: () => void
   nav: string | null
 }
-export type SkillName = 'Javascript' | 'Typescript' | 'Next.js' | 'React' | 'Node.js'
+export type SkillName = 'Javascript' | 'Typescript' | 'Next.js' | 'React' | 'React Native' | 'Node.js' | 'PostgreSQL' | 'MySQL' | 'MongoDB' | 'Express' | 'Sequelize' | 'HTML' | 'CSS' | 'Tailwind CSS' | 'Cypress' | 'Vitest' | 'Jest' | 'React Testing Library'
 export interface Skill {
   id: number
   name: SkillName
