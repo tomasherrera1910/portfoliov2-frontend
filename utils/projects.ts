@@ -17,7 +17,7 @@ const projects: Project[] = [
     technologies: [getSkill('Typescript'), getSkill('Next.js'), getSkill('React'), getSkill('CSS'), getSkill('Cypress')]
   },
   {
-    id: 1,
+    id: 2,
     name: 'Movies Web',
     description: 'Esto fue un challenge, que habia que seguir un diseño y quede bastante conforme tanto con la funcionalidad, como con el resultado final',
     images: {
