@@ -21,8 +21,8 @@ export interface Project {
   description?: string
   images: ProjectImage
   colors: string[]
-  backendRepo?: string
-  frontEndRepo?: string
+  backendRepo: string | null
+  frontEndRepo: string | null
   deployURL: string
   technologies: Skill[]
 }
