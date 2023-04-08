@@ -8,21 +8,22 @@ import { Education } from '../components/Education'
 import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
 import { Welcome } from '../components/Welcome'
+import { Skills } from '../components/Skills'
 
 interface Props {
   skills: Skill[]
   projects: Project[]
 }
-// export const getServerSideProps: GetServerSideProps<Props> = async () => {
-//   const skills = await (await api.getSkills()).sort((s1, s2) => s1.name.localeCompare(s2.name))
-//   const projects = await api.getProjects()
-//   return {
-//     props: {
-//       skills,
-//       projects
-//     }
-//   }
-// }
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const skills = await api.getSkills()
+  const projects = await api.getProjects()
+  return {
+    props: {
+      skills,
+      projects
+    }
+  }
+}
 const Home: NextPage<Props> = ({ skills, projects }: Props) => {
   return (
     <>
@@ -32,6 +33,7 @@ const Home: NextPage<Props> = ({ skills, projects }: Props) => {
           <Navbar />
           <main className='flex flex-col px-4 py-2 items-center justify-center'>
             <Welcome />
+            <Skills skills={skills} />
             {/* <Projects projects={projects} skills={skills}/> */}
             <section className='flex flex-col gap-16 my-8 lg:flex-row xl:flex-col 2xl:flex-row lg:justify-between max-w-7xl'>
               <Education />
