@@ -1,7 +1,7 @@
-import { Technology } from '../../utils/types'
+import { Skill } from '../../utils/types'
 
 interface Props {
-  technologies: Technology[]
+  technologies: Skill[]
 }
 export default function ProjectTechnologies ({ technologies }: Props): JSX.Element {
   return (
