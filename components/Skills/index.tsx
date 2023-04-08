@@ -9,7 +9,7 @@ interface Props {
 export function Skills ({ skills }: Props): JSX.Element {
   const { fullstackSkills, frontendSkills, backendSkills, databaseSkills, testingSkills } = useSkillsByCategory({ skills })
   return (
-    <section className='font-roboto flex flex-col w-full gap-3 max-w-3xl'>
+    <section className='font-roboto flex flex-col w-full gap-3 max-w-5xl'>
       <h3 className='text-5xl uppercase text-sky-500 font-semibold animate-pulse'>Skills</h3>
       <div className='flex flex-col gap-4'>
         <SkillsList skills={fullstackSkills} />
