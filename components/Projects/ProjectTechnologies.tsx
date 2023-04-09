@@ -5,7 +5,7 @@ interface Props {
 }
 export default function ProjectTechnologies ({ technologies }: Props): JSX.Element {
   return (
-    <section className='my-3'>
+    <section className='my-3 max-w-xs'>
       <h4>Tecnologías utilizadas:</h4>
       <ul className='flex w-full gap-x-4 flex-wrap'>
         {technologies.map((technology) => (
