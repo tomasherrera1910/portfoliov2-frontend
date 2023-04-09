@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
 interface Props {
-  backendRepo?: string
-  frontEndRepo?: string
-  deployURL?: string
+  backendRepo: string | null
+  frontEndRepo: string | null
+  deployURL: string | null
   primary: string
   secondary: string
 }
