@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Project } from '../utils/types'
+import usePagination from './usePagination'
 
 interface HookParameters {
   initialProjects: Project[]
@@ -7,8 +8,9 @@ interface HookParameters {
 
 const useFiltersProjects = ({ initialProjects }: HookParameters) => {
   const [filteredProjects, setFilteredProjects] = useState(initialProjects)
-
+  const { setTotalPages, setPage, totalPages, page, nextPage, prevPage, sliceProjects } = usePagination()
   const [filters, setFilters] = useState<number[]>([])
+
   function resetFilters (): void {
     const checkboxes = document.querySelectorAll<HTMLInputElement>("input[type='checkbox']")
     checkboxes.forEach(function (checkbox) {
@@ -33,7 +35,12 @@ const useFiltersProjects = ({ initialProjects }: HookParameters) => {
       setFilteredProjects(initialProjects)
     }
   }, [filters])
-  return { filteredProjects, resetFilters, filterToggle, filters }
+  useEffect(() => {
+    setTotalPages(Math.ceil(filteredProjects.length / 3))
+    setPage(1)
+  }, [filteredProjects])
+
+  return { filteredProjects, resetFilters, filterToggle, filters, totalPages, page, nextPage, prevPage, sliceProjects }
 }
 
 export default useFiltersProjects
