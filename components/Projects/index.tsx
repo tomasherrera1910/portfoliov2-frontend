@@ -1,5 +1,6 @@
 import useFiltersProjects from '../../hooks/useFiltersProjects'
 import { Project, Skill } from '../../utils/types'
+import Pagination from './Pagination'
 import ProjectCard from './ProjectCard'
 import ProjectsFilter from './ProjectsFilter'
 
@@ -8,7 +9,7 @@ interface Props {
   skills: Skill[]
 }
 export function Projects ({ projects, skills }: Props): JSX.Element {
-  const { filteredProjects, filterToggle, resetFilters, filters } = useFiltersProjects({ initialProjects: projects })
+  const { filteredProjects, filterToggle, resetFilters, filters, totalPages, nextPage, prevPage, page, sliceProjects } = useFiltersProjects({ initialProjects: projects })
   return (
     <section className='w-full flex flex-col max-w-5xl my-12'>
       <h3 className='text-5xl uppercase text-sky-500 font-semibold animate-pulse'>Proyectos</h3>
@@ -16,10 +17,11 @@ export function Projects ({ projects, skills }: Props): JSX.Element {
         <ProjectsFilter skills={skills} filterToggle={filterToggle} resetFilters={resetFilters} results={filteredProjects.length} filters={filters} />
         <section className='flex flex-col gap-2 grow lg:max-w-[720px]'>
           {
-            filteredProjects.map((project) => {
+            filteredProjects.slice(sliceProjects.since, sliceProjects.to).map((project) => {
               return <ProjectCard key={project.id} project={project} />
             })
         }
+          <Pagination totalPages={totalPages} page={page} nextPage={nextPage} prevPage={prevPage} />
         </section>
       </div>
     </section>
