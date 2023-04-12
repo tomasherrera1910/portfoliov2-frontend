@@ -15,6 +15,6 @@ export const education: EducationPlace[] = [
     date: '2023-Actualidad',
     image: '/nocountry-logo.jpg',
     url: 'https://www.nocountry.tech/',
-    description: 'Acá realizo simulaciones de entornos laborales, ya que No Country lo que hace es juntar un grupo de Juniors y ponerlos a hacer un proyecto grupal. Y esto me sirvió muchísimo para mejorar en mi trabajo en equipo. Actualmente llevo realizados 2 proyectos.'
+    description: 'Acá realizo simulaciones de entornos laborales. Llevo realizados 2 proyectos y he aprendido bastante de metodologías ágiles como Scrum y de como trabajar correctamente con equipos en Github.'
   }
 ]
