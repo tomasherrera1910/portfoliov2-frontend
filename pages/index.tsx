@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next'
 import { Contact } from '../components/Contact'
 import CustomHead from '../components/Head'
-// import { Projects } from '../components/Projects'
+import { Projects } from '../components/Projects'
 import api from '../utils/api'
 import { Project, Skill } from '../utils/types'
 import { Education } from '../components/Education'
@@ -34,11 +34,9 @@ const Home: NextPage<Props> = ({ skills, projects }: Props) => {
           <main className='flex flex-col px-4 py-2 items-center justify-center'>
             <Welcome />
             <Skills skills={skills} />
-            {/* <Projects projects={projects} skills={skills}/> */}
-            <section className='flex flex-col gap-16 my-8 lg:flex-row xl:flex-col 2xl:flex-row lg:justify-between max-w-7xl'>
-              <Education />
-              <Contact />
-            </section>
+            <Projects projects={projects} skills={skills} />
+            <Education />
+            <Contact />
           </main>
         </div>
         <Footer />
