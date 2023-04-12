@@ -11,7 +11,7 @@ interface Props {
 export function Projects ({ projects, skills }: Props): JSX.Element {
   const { filteredProjects, filterToggle, resetFilters, filters, totalPages, nextPage, prevPage, page, sliceProjects } = useFiltersProjects({ initialProjects: projects })
   return (
-    <section className='w-full flex flex-col max-w-5xl my-12'>
+    <section className='w-full flex flex-col max-w-5xl my-12 items-center sm:items-start'>
       <h3 className='text-5xl uppercase text-sky-500 font-semibold animate-pulse'>Proyectos</h3>
       <div className='w-full flex flex-col lg:flex-row gap-4 justify-center my-12'>
         <ProjectsFilter skills={skills} filterToggle={filterToggle} resetFilters={resetFilters} results={filteredProjects.length} filters={filters} />

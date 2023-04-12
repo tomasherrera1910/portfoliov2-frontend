@@ -5,7 +5,7 @@ interface Props {
 }
 export default function SkillsList ({ skills }: Props): JSX.Element {
   return (
-    <ul className='flex gap-2 flex-wrap items-center'>
+    <ul className='flex gap-2 flex-wrap items-center justify-center'>
       {skills.map(skill => (
         <li key={skill.id} className='flex flex-col items-center md:grayscale ease-in-out duration-200 hover:scale-110 hover:grayscale-0'>
           <article className='border-[1px] border-slate-400 bg-slate-900 bg-opacity-20 rounded-full w-fit p-4'>
