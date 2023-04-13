@@ -19,7 +19,7 @@ export default function ProjectsFilter ({ skills, filterToggle, resetFilters, re
   return (
     <>
       <button className={`flex items-center w-fit p-1 gap-1 font-bold lg:hidden ${showFilters ? 'hidden' : ''}`} onClick={handleShowFilters}>Abrir Filtros <FontAwesomeIcon icon={faBars} width={14} /></button>
-      <aside className={`flex z-40 font-roboto flex-col self-start min-h-full gap-1 bg-black bg-opacity-80 p-1 rounded fixed ease-in-out duration-200 top-0 ${menuFiltersPosition} lg:relative lg:left-0`}>
+      <aside className={`flex z-40 lg:z-10 font-roboto flex-col self-start min-h-full gap-1 bg-black bg-opacity-80 p-1 rounded fixed ease-in-out duration-200 top-0 ${menuFiltersPosition} lg:relative lg:left-0`}>
         <button className='text-red-700 flex items-center gap-1 p-1 font-bold lg:hidden' onClick={handleShowFilters}>Cerrar Filtros <FontAwesomeIcon icon={faClose} width={12} /></button>
         <h3 className='flex gap-2 font-bold'>Filtrar Proyectos <FontAwesomeIcon icon={faFilter} width={20} /></h3>
         <div className='flex gap-1'>
