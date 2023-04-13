@@ -19,7 +19,7 @@ export function Contact (): JSX.Element {
     })
   }
   return (
-    <section className='w-full flex flex-col max-w-5xl items-center sm:items-start z-10 my-12' ref={contactMeRef}>
+    <section className='w-full flex flex-col max-w-5xl items-center sm:items-start z-10 pt-12 mb-12' ref={contactMeRef} id='contact'>
       <h3 className='text-sky-600 font-roboto font-bold text-4xl sm:text-5xl animate-pulse'>CONTACTAME</h3>
       <section className='w-full flex flex-col max-w-5xl items-center sm:flex-row sm:justify-start'>
         <form className='bg-black w-full bg-opacity-20 rounded-tr-md p-2 sm:grow sm:rounded-bl-md sm:rounded-tr-none max-w-sm sm:max-w-lg'>

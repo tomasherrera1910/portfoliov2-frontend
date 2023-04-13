@@ -14,7 +14,7 @@ export function Projects ({ projects, skills }: Props): JSX.Element {
   const { projectsRef } = useContext(SidebarContext)
   const { filteredProjects, filterToggle, resetFilters, filters, totalPages, nextPage, prevPage, page, sliceProjects } = useFiltersProjects({ initialProjects: projects })
   return (
-    <section className='w-full flex flex-col max-w-5xl my-12 gap-3 items-center sm:items-start' ref={projectsRef}>
+    <section className='w-full flex flex-col max-w-5xl pt-12 gap-3 items-center sm:items-start' ref={projectsRef} id='projects'>
       <h3 className='text-5xl uppercase text-sky-500 font-semibold animate-pulse'>Proyectos</h3>
       <div className='w-full flex flex-col lg:flex-row gap-4 justify-center'>
         <ProjectsFilter skills={skills} filterToggle={filterToggle} resetFilters={resetFilters} results={filteredProjects.length} filters={filters} />
