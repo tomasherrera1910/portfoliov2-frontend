@@ -3,10 +3,8 @@ import { faBars, faClose } from '@fortawesome/free-solid-svg-icons'
 import { useToggle } from '../../hooks/useToggle'
 import SocialsMedia from '../SocialsMedia'
 import NavbarSections from './NavbarSections'
-import useSidebar from '../../hooks/useSidebar'
 
 export function Navbar (): JSX.Element {
-  const {} = useSidebar()
   const { toggle, handleToggle } = useToggle()
   const navMobile = `bg-black text-white bg-opacity-80 w-full duration-300 ease-in-out absolute z-30 top-0 h-screen xl:h-auto xl:h-calc(100vh - 80px) ${toggle ? 'left-0' : '-left-full'} flex flex-col items-center justify-center gap-8`
 
