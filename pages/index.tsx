@@ -9,6 +9,7 @@ import { Footer } from '../components/Footer'
 import { Navbar } from '../components/Navbar'
 import { Welcome } from '../components/Welcome'
 import { Skills } from '../components/Skills'
+import { SidebarProvider } from '../context/sidebar'
 
 interface Props {
   skills: Skill[]
@@ -30,14 +31,16 @@ const Home: NextPage<Props> = ({ skills, projects }: Props) => {
       <CustomHead title='Portfolio Tomás Herrera' />
       <div className='min-h-screen flex flex-col bg-[#010108] text-white'>
         <div className='flex grow justify-center gap-12'>
-          <Navbar />
-          <main className='flex flex-col px-4 py-2 items-center justify-center'>
-            <Welcome />
-            <Skills skills={skills} />
-            <Projects projects={projects} skills={skills} />
-            <Education />
-            <Contact />
-          </main>
+          <SidebarProvider>
+            <Navbar />
+            <main className='flex flex-col px-4 py-2 items-center justify-center'>
+              <Welcome />
+              <Skills skills={skills} />
+              <Projects projects={projects} skills={skills} />
+              <Education />
+              <Contact />
+            </main>
+          </SidebarProvider>
         </div>
         <Footer />
       </div>
