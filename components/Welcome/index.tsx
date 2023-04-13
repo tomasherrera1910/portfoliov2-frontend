@@ -1,9 +1,13 @@
 import styles from './welcome.module.css'
 import SocialsMedia from '../SocialsMedia'
+import { useContext } from 'react'
+import { SidebarContext } from '../../context/sidebar'
 
 export function Welcome (): JSX.Element {
+  const { aboutMeRef } = useContext(SidebarContext)
+
   return (
-    <section className='flex items-center h-screen w-full font-roboto justify-center'>
+    <section className='flex items-center h-screen w-full font-roboto justify-center' ref={aboutMeRef}>
       <aside className='grow flex flex-col items-center justify-center gap-2'>
         <h1 className='text-6xl text-center font-semibold sm:text-7xl'>TOMÁS HERRERA</h1>
         <h3 className={`${styles.typingText} max-w-fit text-3xl text-sky-500 sm:text-5xl`}>Fullstack Developer</h3>

@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import ContactInfo from './ContactInfo'
 import ContactInput from './ContactInput'
+import { SidebarContext } from '../../context/sidebar'
 
 const INITIAL_FORM = {
   name: '',
@@ -9,6 +10,7 @@ const INITIAL_FORM = {
   message: ''
 }
 export function Contact (): JSX.Element {
+  const { contactMeRef } = useContext(SidebarContext)
   const [inputsFields, setInputFields] = useState(INITIAL_FORM)
   const handleChangeInput = (input: string, value: string) => {
     setInputFields({
@@ -17,7 +19,7 @@ export function Contact (): JSX.Element {
     })
   }
   return (
-    <section className='w-full flex flex-col max-w-5xl items-center sm:items-start z-10 my-12'>
+    <section className='w-full flex flex-col max-w-5xl items-center sm:items-start z-10 my-12' ref={contactMeRef}>
       <h3 className='text-sky-600 font-roboto font-bold text-4xl sm:text-5xl animate-pulse'>CONTACTAME</h3>
       <section className='w-full flex flex-col max-w-5xl items-center sm:flex-row sm:justify-start'>
         <form className='bg-black w-full bg-opacity-20 rounded-tr-md p-2 sm:grow sm:rounded-bl-md sm:rounded-tr-none max-w-sm sm:max-w-lg'>
