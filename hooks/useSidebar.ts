@@ -11,17 +11,16 @@ const useSidebar = () => {
     const aboutMeFinalHeight = aboutMeHeight * 0.80
     const skillsFinalHeight = aboutMeFinalHeight + (skillsHeight * 0.80)
     const projectsFinalHeight = skillsFinalHeight + (projectsHeight * 0.80)
-    const educationFinalHeight = projectsFinalHeight + (educationHeight * 1.2)
-
+    const educationExactlyHeight = aboutMeHeight + projectsHeight + skillsHeight
     if (position < aboutMeFinalHeight) {
       setActive('aboutMe')
     } else if (position >= aboutMeFinalHeight && position < skillsFinalHeight) {
       setActive('skills')
     } else if (position >= skillsFinalHeight && position < projectsFinalHeight) {
       setActive('projects')
-    } else if (position >= projectsFinalHeight && position < educationFinalHeight) {
+    } else if (position < educationExactlyHeight + 16) {
       setActive('education')
-    } else if (position >= educationFinalHeight || position === maxScroll) {
+    } else if (position >= educationExactlyHeight + 16 || position === maxScroll) {
       setActive('contact')
     }
   }
