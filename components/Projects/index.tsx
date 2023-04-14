@@ -5,6 +5,7 @@ import Pagination from './Pagination'
 import ProjectCard from './ProjectCard'
 import ProjectsFilter from './ProjectsFilter'
 import { SidebarContext } from '../../context/sidebar'
+import NoProjectsFound from './NoProjectsFound'
 
 interface Props {
   projects: Project[]
@@ -19,13 +20,14 @@ export function Projects ({ projects, skills }: Props): JSX.Element {
       <div className='w-full flex flex-col lg:flex-row gap-4 justify-center'>
         <ProjectsFilter skills={skills} filterToggle={filterToggle} resetFilters={resetFilters} results={filteredProjects.length} filters={filters} />
         <section className='flex flex-col gap-2 grow lg:max-w-[720px]'>
-          <Pagination totalPages={totalPages} page={page} nextPage={nextPage} prevPage={prevPage} />
+          {totalPages > 0 && <Pagination totalPages={totalPages} page={page} nextPage={nextPage} prevPage={prevPage} />}
           {
             filteredProjects.slice(sliceProjects.since, sliceProjects.to).map((project) => {
               return <ProjectCard key={project.id} project={project} />
             })
-        }
-          <Pagination totalPages={totalPages} page={page} nextPage={nextPage} prevPage={prevPage} />
+          }
+          {filteredProjects.length === 0 && <NoProjectsFound resetFilters={resetFilters} />}
+          {totalPages > 0 && <Pagination totalPages={totalPages} page={page} nextPage={nextPage} prevPage={prevPage} />}
         </section>
       </div>
     </section>

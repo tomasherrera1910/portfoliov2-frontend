@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 const usePagination = () => {
   const [page, setPage] = useState(1)
-  const [totalPages, setTotalPages] = useState<number | null>(null)
+  const [totalPages, setTotalPages] = useState<number>(0)
   const [sliceProjects, setSliceProjects] = useState({
     since: 0,
     to: 3
