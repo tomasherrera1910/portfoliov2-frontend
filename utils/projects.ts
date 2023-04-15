@@ -10,7 +10,6 @@ const projects: Project[] = [
       desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1680974090/portfolio-projects/NBA-Desktop_es7cnd.png',
       mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1680974098/portfolio-projects/NBA-Mobile_l1ltmw.png'
     },
-    colors: ['#000', '#222', '#333'],
     backendRepo: null,
     frontEndRepo: 'https://github.com/tomasherrera1910/nba-webapp',
     deployURL: 'http://nba-webapp.vercel.app/',
@@ -24,7 +23,6 @@ const projects: Project[] = [
       desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1680974072/portfolio-projects/MOVIES-Desktop_j7bu6z.png',
       mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1680974080/portfolio-projects/MOVIES-Mobile_t8ksfy.png'
     },
-    colors: ['#000', '#222', '#333'],
     backendRepo: null,
     frontEndRepo: 'https://github.com/tomasherrera1910/movies_homepage',
     deployURL: 'https://lovely-moonbeam-3fa776.netlify.app/',
@@ -38,7 +36,6 @@ const projects: Project[] = [
       desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681048822/portfolio-projects/WEATHER-Desktop_lnzem7.png',
       mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681048810/portfolio-projects/WEATHER-Mobile_lrkbcn.png'
     },
-    colors: ['#000', '#222', '#333'],
     backendRepo: null,
     frontEndRepo: 'https://github.com/tomasherrera1910/weatherapp-nextjs',
     deployURL: 'https://weatherapp-nextjs.vercel.app/',

@@ -20,7 +20,6 @@ export interface Project {
   name: string
   description?: string
   images: ProjectImage
-  colors: string[]
   backendRepo: string | null
   frontEndRepo: string | null
   deployURL: string
