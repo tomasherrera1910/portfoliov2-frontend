@@ -29,7 +29,7 @@ const Home: NextPage<Props> = ({ skills, projects }: Props) => {
   return (
     <>
       <CustomHead title='Portfolio Tomás Herrera' />
-      <div className='min-h-screen flex flex-col bg-[#010108] text-white'>
+      <div className='min-h-screen flex flex-col duration-500 ease-in-out dark:bg-[#010108] dark:text-white bg-[#bebbbb] text-black'>
         <div className='flex grow justify-center gap-12'>
           <SidebarProvider>
             <Navbar />

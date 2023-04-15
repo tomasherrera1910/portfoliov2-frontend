@@ -11,12 +11,12 @@ export default function Pagination ({ totalPages, page, prevPage, nextPage }: Pr
   const cantBackPage = page - 1 === 0
   const cantNextPage = page + 1 > (totalPages ?? 1)
   return (
-    <footer className='w-full flex justify-around items-center py-4 bg-black bg-opacity-40 border-[1px] border-slate-800'>
-      <button onClick={prevPage} disabled={cantBackPage} className={`${cantBackPage ? 'text-slate-800' : 'hover:scale-110'} ease-in-out duration-200`}>
+    <footer className='w-full flex justify-around items-center py-4 bg-gray-600 dark:bg-black bg-opacity-40 border-[1px] border-slate-300 dark:border-slate-800'>
+      <button onClick={prevPage} disabled={cantBackPage} className={`${cantBackPage ? 'text-slate-300 dark:text-slate-800' : 'hover:scale-110 cursor-pointer'} ease-in-out duration-200`}>
         <FontAwesomeIcon icon={faArrowLeft} className='w-5' />
       </button>
       <span className='font-barlow'>Page {page} of {totalPages}</span>
-      <button onClick={nextPage} disabled={cantNextPage} className={`${cantNextPage ? 'text-slate-800' : 'hover:scale-110'}`}>
+      <button onClick={nextPage} disabled={cantNextPage} className={`${cantNextPage ? 'text-slate-300 dark:text-slate-800' : 'hover:scale-110 cursor-pointer'}`}>
         <FontAwesomeIcon icon={faArrowRight} className='w-5' />
       </button>
     </footer>

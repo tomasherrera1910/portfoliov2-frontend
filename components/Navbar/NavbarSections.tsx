@@ -5,8 +5,8 @@ import useSidebar from '../../hooks/useSidebar'
 export default function NavbarSections (): JSX.Element {
   const { active } = useSidebar()
   const anchorsStyle = 'flex font-roboto font-bold text-xl gap-3 items-center justify-center w-44 rounded-full p-3 border-b-[1px] cursor-pointer duration-300 ease-in-out hover:scale-105 hover:saturate-200'
-  const anchorInactive = 'text-sky-800 bg-gray-400 border-b-sky-800'
-  const anchorActive = 'bg-sky-600 border-b-white text-white scale-110'
+  const anchorInactive = 'dark:text-sky-800 dark:bg-gray-400 dark:border-b-sky-800 text-blue-400 border-b-blue-400 bg-gray-800'
+  const anchorActive = 'dark:bg-sky-600 dark:border-b-white dark:text-white bg-blue-400 border-b-gray-800 text-gray-800 scale-110'
   return (
     <>
       <a href='#welcome' className={`${anchorsStyle} ${active === 'aboutMe' ? anchorActive : anchorInactive}`}>

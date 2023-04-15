@@ -16,13 +16,13 @@ export default function EducationCard ({ place }: Props): JSX.Element {
           <h4 className='uppercase font-bold font-roboto text-sky-700 ease-linear text-base sm:text-xl lg:text-3xl duration-150 hover:underline'>{place.name}</h4>
         </a>
         <section className='flex gap-2'>
-          <span className='font-roboto text-gray-500 font-semibold text-xs sm:text-sm lg:text-base'>{place.date}</span>
+          <span className='font-roboto text-gray-800 dark:text-gray-500 font-semibold text-xs sm:text-sm lg:text-base'>{place.date}</span>
           <button onClick={handleToggle} className='sm:hidden w-fit'>
             <FontAwesomeIcon icon={toggle ? faMinusCircle : faPlusCircle} width={16} className={`${toggle ? 'text-red-800' : 'text-sky-800'}`} />
           </button>
         </section>
         <section className='mt-1'>
-          <p className={`font-barlow font-extralight text-xs text-gray-300 ${toggle ? 'block' : 'hidden'} sm:text-sm lg:text-lg sm:block`}>{place.description}</p>
+          <p className={`font-barlow font-normal dark:font-extralight text-xs text-black dark:text-gray-300 ${toggle ? 'block' : 'hidden'} sm:text-sm lg:text-lg sm:block`}>{place.description}</p>
         </section>
       </aside>
     </li>

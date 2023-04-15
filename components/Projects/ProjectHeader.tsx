@@ -6,7 +6,7 @@ export default function ProjectHeader ({ name, description }: Props): JSX.Elemen
   return (
     <section>
       <h3 className='font-roboto font-semibold text-4xl'>{name}</h3>
-      <p className='font-barlow font-extralight max-w-sm opacity-80 text-sm'>{description}</p>
+      <p className='font-barlow dark:font-extralight font-normal max-w-sm opacity-80 text-sm'>{description}</p>
     </section>
   )
 }

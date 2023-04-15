@@ -4,12 +4,14 @@ import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export function Footer (): JSX.Element {
+  const darkFooter = 'dark:bg-[#010108] dark:border-t-slate-800 dark:text-white'
+  const lightFooter = 'bg-[#9f9e9e] border-t-slate-800 text-black'
   return (
-    <footer className='bg-[#010108] border-t-[1px] border-t-slate-800 text-white py-2 flex flex-col items-center font-roboto'>
+    <footer className={`${lightFooter} ${darkFooter} border-t-[1px] py-2 flex flex-col items-center font-roboto`}>
       <section className='flex max-w-3xl items-center justify-center'>
         <div className='flex flex-col gap-2'>
-          <p className='flex text-sm gap-1 text-gray-300 items-center justify-center flex-wrap'>Designed and developed by
-            <a href='https://www.linkedin.com/in/mauro-tomas-herrera/' target='_blank' rel='noreferrer' className='text-white font-bold text-base hover:underline'>Tomás Herrera</a>
+          <p className='flex text-sm gap-1 text-gray-900 dark:text-gray-300 items-center justify-center flex-wrap'>Designed and developed by
+            <a href='https://www.linkedin.com/in/mauro-tomas-herrera/' target='_blank' rel='noreferrer' className='text-black dark:text-white font-bold text-base hover:underline'>Tomás Herrera</a>
             <span className='font-barlow font-semibold text-xs'>2022-2023</span>
           </p>
           <nav className='flex justify-around items-center xl:hidden'>
