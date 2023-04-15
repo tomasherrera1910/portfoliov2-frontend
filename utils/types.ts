@@ -53,3 +53,7 @@ export interface EducationPlace {
   description: string
   date: string
 }
+export enum Theme {
+  Light = 'light',
+  Dark = 'dark',
+}
