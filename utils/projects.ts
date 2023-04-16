@@ -7,8 +7,8 @@ const projects: Project[] = [
     name: 'NBA Web App',
     description: 'Decidi hacer una app de la NBA ya que es algo que me encanta y me sirvio de motivación para aprender Next.js con Typescript.',
     images: {
-      desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1680974090/portfolio-projects/NBA-Desktop_es7cnd.png',
-      mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1680974098/portfolio-projects/NBA-Mobile_l1ltmw.png'
+      desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681656807/portfolio-projects/NBA-DESKTOP_xdyiq2.png',
+      mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681656807/portfolio-projects/NBA-MOBILE_wusdh4.png'
     },
     backendRepo: null,
     frontEndRepo: 'https://github.com/tomasherrera1910/nba-webapp',
@@ -20,8 +20,8 @@ const projects: Project[] = [
     name: 'Movies Web',
     description: 'Esto fue un challenge, que habia que seguir un diseño y quede bastante conforme tanto con la funcionalidad, como con el resultado final.',
     images: {
-      desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1680974072/portfolio-projects/MOVIES-Desktop_j7bu6z.png',
-      mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1680974080/portfolio-projects/MOVIES-Mobile_t8ksfy.png'
+      desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681656807/portfolio-projects/MOVIES-DESKTOP_n09tau.png',
+      mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681656807/portfolio-projects/MOVIES-MOBILE_m3dapq.png'
     },
     backendRepo: null,
     frontEndRepo: 'https://github.com/tomasherrera1910/movies_homepage',
@@ -33,8 +33,8 @@ const projects: Project[] = [
     name: 'Weather APP',
     description: 'APP básica, pero que estaba mas que nada enfocada en aprender Next.js usando SSR y en dar mis primeros pasos en el Testing.',
     images: {
-      desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681048822/portfolio-projects/WEATHER-Desktop_lnzem7.png',
-      mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681048810/portfolio-projects/WEATHER-Mobile_lrkbcn.png'
+      desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681656807/portfolio-projects/WEATHER-DESKTOP_xqi9zk.png',
+      mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681656806/portfolio-projects/WEATHER-MOBILE_kurija.png'
     },
     backendRepo: null,
     frontEndRepo: 'https://github.com/tomasherrera1910/weatherapp-nextjs',

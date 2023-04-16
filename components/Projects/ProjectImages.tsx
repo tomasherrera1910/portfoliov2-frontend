@@ -12,8 +12,8 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
   const [openMobileImage, setOpenMobileImage] = useState(false)
   const [openDesktopImage, setOpenDesktopImage] = useState(false)
 
-  const baseImageStyle = 'absolute border-stone-200 border-[1px] rounded ease-in-out duration-200 cursor-pointer'
-  const closeButtonStyle = 'bg-red-500 border-[1px] border-slate-300 px-4 py-2 text-xl font-roboto text-slate-200 rounded-full absolute top-2 right-2 duration-200 ease-linear hover:bg-red-700'
+  const baseImageStyle = 'absolute ease-in-out duration-200 cursor-pointer'
+  const closeButtonStyle = 'bg-red-500 border-[1px] border-slate-300 px-4 py-2 text-xl font-roboto text-slate-200 rounded-full absolute top-2 -right-4 duration-200 ease-linear hover:bg-red-700'
   const handleImageHover = (setState: React.Dispatch<React.SetStateAction<string>>): void => {
     setState((prevState: string) => {
       if (prevState === '') {
@@ -48,6 +48,7 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
           <img
             src={mobileImage}
             alt={`Desktop Image from project: ${name}`}
+            className='h-4/5 max-h-[768px]'
           />
           <button className={closeButtonStyle} onClick={() => { setOpenMobileImage(false) }}>
             X
@@ -55,10 +56,11 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
         </picture>
       </Modal>
       <Modal open={openDesktopImage}>
-        <picture className='relative'>
+        <picture className='relative flex justify-center'>
           <img
             src={desktopImage}
             alt={`Desktop Image from project: ${name}`}
+            className='w-11/12 max-w-7xl'
           />
           <button className={closeButtonStyle} onClick={() => { setOpenDesktopImage(false) }}>
             X
