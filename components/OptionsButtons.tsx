@@ -15,7 +15,7 @@ export function OptionsButtons (): JSX.Element {
         onClick={handleTheme}
         className={`p-2 rounded-full bg-black bg-opacity-20 shadow duration-200 ease-in-out ${themeButtonStyle} hover:scale-110`}
       >
-        <FontAwesomeIcon icon={theme === Theme.Dark ? faMoon : faSun} className='w-5 h-5 lg:w-8 lg:h-8' />
+        <FontAwesomeIcon icon={theme === Theme.Dark ? faMoon : faSun} className='w-8 h-8 lg:w-12 lg:h-12' />
       </button>
 
     </header>
