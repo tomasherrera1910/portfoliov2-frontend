@@ -3,10 +3,11 @@ import { useId, useState } from 'react'
 interface Props {
   placeholder: string
   inputValue: string
+  inputName: string
   handleChange: (value: string) => void
   area?: boolean
 }
-export default function ContactInput ({ placeholder, inputValue, handleChange, area }: Props): JSX.Element {
+export default function ContactInput ({ placeholder, inputName, inputValue, handleChange, area }: Props): JSX.Element {
   const inputId = useId()
   const [focus, setFocus] = useState({ label: false, input: false })
   const handleFocus = () => {
@@ -32,6 +33,7 @@ export default function ContactInput ({ placeholder, inputValue, handleChange, a
             onBlur={handleBlur}
             value={inputValue}
             onChange={(evt) => { handleChange(evt.target.value) }}
+            name={inputName}
             required
           />
         : <input
@@ -42,6 +44,7 @@ export default function ContactInput ({ placeholder, inputValue, handleChange, a
             onBlur={handleBlur}
             value={inputValue}
             onChange={(evt) => { handleChange(evt.target.value) }}
+            name={inputName}
             required
           />}
     </div>

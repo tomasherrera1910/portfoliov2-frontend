@@ -27,14 +27,18 @@ export function Contact (): JSX.Element {
     <section className='w-full flex flex-col max-w-5xl items-center sm:items-start z-10 pt-20 mb-12' ref={contactMeRef} id='contact'>
       <h3 className='text-blue-800 dark:text-sky-600 font-roboto font-bold text-4xl sm:text-5xl animate-pulse'>CONTACTAME</h3>
       <section className='w-full flex flex-col max-w-5xl items-center sm:flex-row sm:justify-start'>
-        <form className='dark:bg-black dark:bg-opacity-60 bg-gray-300 w-full bg-opacity-20 rounded-tr-md p-2 sm:grow sm:rounded-bl-md sm:rounded-tr-none max-w-sm sm:max-w-lg'>
+        <form
+          action='https://formspree.io/f/mwkjwjgp'
+          method='POST'
+          className='dark:bg-black dark:bg-opacity-60 bg-gray-300 w-full bg-opacity-20 rounded-tr-md p-2 sm:grow sm:rounded-bl-md sm:rounded-tr-none max-w-sm sm:max-w-lg'
+        >
           <div className='px-2'>
             <section className='md:flex md:mt-6 md:justify-between'>
-              <ContactInput placeholder='Nombre' inputValue={inputsFields.name} handleChange={(value: string) => { handleChangeInput('name', value) }} />
-              <ContactInput placeholder='Email' inputValue={inputsFields.email} handleChange={(value: string) => { handleChangeInput('email', value) }} />
+              <ContactInput placeholder='Nombre' inputName='name' inputValue={inputsFields.name} handleChange={(value: string) => { handleChangeInput('name', value) }} />
+              <ContactInput placeholder='Email' inputName='email' inputValue={inputsFields.email} handleChange={(value: string) => { handleChangeInput('email', value) }} />
             </section>
-            <ContactInput placeholder='Asunto' inputValue={inputsFields.subject} handleChange={(value: string) => { handleChangeInput('subject', value) }} />
-            <ContactInput area placeholder='Mensaje' inputValue={inputsFields.message} handleChange={(value: string) => { handleChangeInput('message', value) }} />
+            <ContactInput placeholder='Asunto' inputName='subject' inputValue={inputsFields.subject} handleChange={(value: string) => { handleChangeInput('subject', value) }} />
+            <ContactInput area placeholder='Mensaje' inputName='message' inputValue={inputsFields.message} handleChange={(value: string) => { handleChangeInput('message', value) }} />
             <button className={`${buttonLight} ${buttonDark} font-roboto bg-opacity-70 w-full py-2 rounded-sm border-b-2 ease-linear duration-200 hover:scale-95`}>
               ENVIAR
             </button>
