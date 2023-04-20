@@ -10,7 +10,8 @@ import { Navbar } from '../components/Navbar'
 import { Welcome } from '../components/Welcome'
 import { Skills } from '../components/Skills'
 import { SidebarProvider } from '../context/sidebar'
-
+import Aos from 'aos'
+import { useEffect } from 'react'
 interface Props {
   skills: Skill[]
   projects: Project[]
@@ -26,6 +27,9 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
   }
 }
 const Home: NextPage<Props> = ({ skills, projects }: Props) => {
+  useEffect(() => {
+    Aos.init()
+  }, [])
   return (
     <>
       <CustomHead title='Portfolio Tomás Herrera' />
