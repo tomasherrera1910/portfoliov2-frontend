@@ -5,8 +5,8 @@ interface Props {
 export default function ProjectHeader ({ name, description }: Props): JSX.Element {
   return (
     <section>
-      <h3 className='font-roboto font-semibold text-4xl'>{name}</h3>
-      <p className='font-barlow dark:font-extralight font-normal max-w-sm opacity-80 text-sm'>{description}</p>
+      <h3 data-aos='fade-down' className='font-roboto text-center sm:text-start font-semibold text-4xl'>{name}</h3>
+      <p data-aos='fade-up' className='font-barlow dark:font-extralight dark:text-gray-400 font-normal max-w-sm opacity-60 text-lg'>{description}</p>
     </section>
   )
 }

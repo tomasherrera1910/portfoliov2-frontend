@@ -13,7 +13,7 @@ interface Props {
 }
 export default function ProjectCardLinks ({ backendRepo, frontEndRepo, deployURL, primary, secondary }: Props): JSX.Element {
   return (
-    <footer className='flex flex-col gap-2 justify-around items-center sm:mt-2 sm:flex-row sm:grow'>
+    <footer data-aos='flip-up' className='flex flex-col gap-2 justify-around items-center sm:mt-2 sm:flex-row sm:grow'>
       {(backendRepo != null) &&
         <Link href={backendRepo} className='flex gap-2 bg-slate-500 dark:bg-slate-900 items-center rounded p-1 w-fit bg-opacity-50 shadow-sm ease-linear duration-150 hover:scale-105'>
           <span>Backend</span>

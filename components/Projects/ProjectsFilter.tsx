@@ -31,7 +31,7 @@ export default function ProjectsFilter ({ skills, filterToggle, resetFilters, re
         </div>
         {
             skills.map(skill => (
-              <label key={skill.id} className='flex gap-1 cursor-pointer font-barlow'>
+              <label key={skill.id} className='flex gap-1 cursor-pointer font-barlow lg:text-xl lg:font-semibold'>
                 <input type='checkbox' value={skill.id} onClick={() => { filterToggle(skill.id) }} />
                 <picture className='flex items-center gap-2'>
                   <img src={skill.imageURL} alt={`${skill.name} logo`} className='w-5 h-5 object-contain' />
