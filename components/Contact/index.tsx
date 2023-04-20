@@ -25,7 +25,7 @@ export function Contact (): JSX.Element {
 
   return (
     <section className='w-full flex flex-col max-w-5xl items-center sm:items-start z-10 pt-20 mb-12' ref={contactMeRef} id='contact'>
-      <h3 className='text-blue-800 dark:text-sky-600 font-roboto font-bold text-4xl sm:text-5xl animate-pulse'>CONTACTAME</h3>
+      <h3 className='text-blue-800 dark:text-sky-600 font-roboto font-bold text-4xl sm:text-5xl md:text-6xl md:my-6'>CONTACTAME</h3>
       <section className='w-full flex flex-col max-w-5xl items-center sm:flex-row sm:justify-start'>
         <form
           action='https://formspree.io/f/mwkjwjgp'
