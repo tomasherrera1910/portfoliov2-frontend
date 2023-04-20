@@ -18,7 +18,7 @@ export function Welcome (): JSX.Element {
         </ul>
         <p className='font-barlow dark:font-light font-semibold text-center text-slate-500 dark:text-slate-400 max-w-sm sm:text-lg'>Tengo 21 años, soy Técnico superior en Programación y un desarrollador web autodidacta, estoy listo para el salto laboral.</p>
       </aside>
-      <picture className='hidden lg:block drop-shadow-3xl-sky'>
+      <picture className='hidden lg:block drop-shadow-3xl-dark dark:drop-shadow-3xl-light'>
         <img src='/foto.png' alt='Mi foto' className='w-96' />
       </picture>
     </section>

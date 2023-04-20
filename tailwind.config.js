@@ -12,7 +12,8 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif']
       },
       dropShadow: {
-        '3xl-sky': '0 32px 64px rgba(96, 165, 250, .75)'
+        '3xl-dark': '16px 16px 16px rgba(0, 0, 0, .75)',
+        '3xl-light': '8px 8px 24px rgba(255, 255, 255, .20)'
       }
     }
   },
