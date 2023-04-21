@@ -1,3 +1,8 @@
 {
-    "aboutMe": "I am 21 years old, I have a Higher Technician degree in Programming and I am a self-taught web developer, I am ready for the job leap."
+    "aboutMe": "I am 21 years old, I have a Higher Technician degree in Programming and I am a self-taught web developer, I am ready for the job leap.",
+    "titleHome": "Home",
+    "titleSkills": "Skills",
+    "titleProjects": "Projects",
+    "titleEducation": "Education",
+    "titleContact": "Contact"
 }

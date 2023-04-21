@@ -1,3 +1,8 @@
 {
-    "aboutMe": "Tengo 21 años, soy Técnico superior en Programación y un desarrollador web autodidacta, estoy listo para el salto laboral."
+    "aboutMe": "Tengo 21 años, soy Técnico superior en Programación y un desarrollador web autodidacta, estoy listo para el salto laboral.",
+    "titleHome": "Sobre Mí",
+    "titleSkills": "Habilidades",
+    "titleProjects": "Proyectos",
+    "titleEducation": "Educación",
+    "titleContact": "Contacto"
 }

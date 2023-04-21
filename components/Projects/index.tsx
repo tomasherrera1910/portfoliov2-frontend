@@ -6,17 +6,19 @@ import ProjectCard from './ProjectCard'
 import ProjectsFilter from './ProjectsFilter'
 import { SidebarContext } from '../../context/sidebar'
 import NoProjectsFound from './NoProjectsFound'
+import useI18N from '../../hooks/useI18N'
 
 interface Props {
   projects: Project[]
   skills: Skill[]
 }
 export function Projects ({ projects, skills }: Props): JSX.Element {
+  const { t } = useI18N()
   const { projectsRef } = useContext(SidebarContext)
   const { filteredProjects, filterToggle, resetFilters, filters, totalPages, nextPage, prevPage, page, sliceProjects } = useFiltersProjects({ initialProjects: projects })
   return (
     <section className='w-full flex flex-col max-w-5xl pt-20 gap-3 items-center sm:items-start' ref={projectsRef} id='projects'>
-      <h3 className='text-5xl uppercase dark:text-sky-500 text-blue-800 font-semibold md:text-6xl md:my-6'>Proyectos</h3>
+      <h3 className='text-5xl uppercase dark:text-sky-500 text-blue-800 font-semibold md:text-6xl md:my-6'>{t('titleProjects')}</h3>
       <div className='w-full flex flex-col lg:flex-row gap-4 justify-center'>
         <ProjectsFilter skills={skills} filterToggle={filterToggle} resetFilters={resetFilters} results={filteredProjects.length} filters={filters} />
         <section className='flex flex-col gap-2 grow lg:max-w-[720px]'>
