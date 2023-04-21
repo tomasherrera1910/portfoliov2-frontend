@@ -48,7 +48,7 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
           <img
             src={mobileImage}
             alt={`Desktop Image from project: ${name}`}
-            className='h-4/5 max-h-[768px]'
+            className='h-screen max-h-[768px]'
           />
           <button className={closeButtonStyle} onClick={() => { setOpenMobileImage(false) }}>
             X
@@ -60,9 +60,9 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
           <img
             src={desktopImage}
             alt={`Desktop Image from project: ${name}`}
-            className='w-11/12 max-w-7xl'
+            className='w-screen max-w-7xl'
           />
-          <button className={closeButtonStyle} onClick={() => { setOpenDesktopImage(false) }}>
+          <button className={`${closeButtonStyle} right-12`} onClick={() => { setOpenDesktopImage(false) }}>
             X
           </button>
         </picture>
