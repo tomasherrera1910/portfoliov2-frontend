@@ -40,6 +40,19 @@ const projects: Project[] = [
     frontEndRepo: 'https://github.com/tomasherrera1910/weatherapp-nextjs',
     deployURL: 'https://weatherapp-nextjs.vercel.app/',
     technologies: [getSkill('Javascript'), getSkill('CSS'), getSkill('React'), getSkill('Next.js'), getSkill('Cypress'), getSkill('React Testing Library'), getSkill('Jest')]
+  },
+  {
+    id: 4,
+    name: 'Always Alert',
+    description: 'APP Desarrollada en equipo en el seleccionado 7 de No Country.',
+    images: {
+      desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1682090308/portfolio-projects/AlwaysAlert-landing_o2zrpi.png',
+      mobile: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1682033634/portfolio-projects/Mockup_home_ikrtx1.png'
+    },
+    backendRepo: 'https://github.com/No-Country/s7-28-m-reactnative/tree/main/api',
+    frontEndRepo: 'https://github.com/No-Country/s7-28-m-reactnative/tree/main/app',
+    deployURL: 'https://alwaysalertlanding.netlify.app/',
+    technologies: [getSkill('Javascript'), getSkill('Tailwind CSS'), getSkill('React Native'), getSkill('Node.js'), getSkill('MongoDB'), getSkill('Express')]
   }
 ]
 

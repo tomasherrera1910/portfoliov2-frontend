@@ -26,8 +26,8 @@ export interface Project {
   technologies: Skill[]
 }
 export interface ProjectImage {
-  mobile: string
-  desktop: string
+  mobile?: string
+  desktop?: string
 }
 
 export interface ProjectSkillUnion {
