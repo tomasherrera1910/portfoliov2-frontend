@@ -2,8 +2,8 @@ import { useState } from 'react'
 import Modal from '../Modal'
 
 interface Props {
-  desktopImage: string
-  mobileImage: string
+  desktopImage?: string
+  mobileImage?: string
   name: string
 }
 export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.Element {
@@ -25,24 +25,33 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
   }
   return (
     <div className='w-28 h-48'>
-      <img
-        id={`mobile-${name}`}
-        src={mobileImage}
-        alt={`Mobile Image from project: ${name}`}
-        className={`${baseImageStyle} top-0 left-0 h-48 w-24 object-cover ${isMobileHover}`}
-        onMouseEnter={() => { handleImageHover(setMobileHover) }}
-        onMouseLeave={() => { handleImageHover(setMobileHover) }}
-        onClick={() => { setOpenMobileImage(true) }}
-      />
-      <img
-        id={`desktop-${name}`}
-        src={desktopImage}
-        alt={`Desktop Image from project: ${name}`}
-        className={`${baseImageStyle} -bottom-3 left-6 w-48 h-28 object-cover ${isDesktopHover}`}
-        onMouseEnter={() => { handleImageHover(setDesktopHover) }}
-        onMouseLeave={() => { handleImageHover(setDesktopHover) }}
-        onClick={() => { setOpenDesktopImage(true) }}
-      />
+      {
+        mobileImage != null && (
+          <img
+            id={`mobile-${name}`}
+            src={mobileImage}
+            alt={`Mobile Image from project: ${name}`}
+            className={`${baseImageStyle} top-0 left-0 h-48 w-24 object-cover ${isMobileHover}`}
+            onMouseEnter={() => { handleImageHover(setMobileHover) }}
+            onMouseLeave={() => { handleImageHover(setMobileHover) }}
+            onClick={() => { setOpenMobileImage(true) }}
+          />
+        )
+      }
+      {
+        desktopImage != null && (
+          <img
+            id={`desktop-${name}`}
+            src={desktopImage}
+            alt={`Desktop Image from project: ${name}`}
+            className={`${baseImageStyle} -bottom-3 left-6 w-48 h-28 object-cover ${isDesktopHover}`}
+            onMouseEnter={() => { handleImageHover(setDesktopHover) }}
+            onMouseLeave={() => { handleImageHover(setDesktopHover) }}
+            onClick={() => { setOpenDesktopImage(true) }}
+          />
+        )
+      }
+
       <Modal open={openMobileImage}>
         <picture className='relative'>
           <img
