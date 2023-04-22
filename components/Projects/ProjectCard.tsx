@@ -14,7 +14,7 @@ export default function ProjectCard ({ project }: Props): JSX.Element {
   const { toggle, handleToggle } = useToggle()
   const bgProjectColors = {
     main: '#222',
-    secondary: '#09f'
+    secondary: '#083f63'
   }
   return (
     <article className='flex relative justify-center items-center p-[2px] rounded-sm' style={{ background: `radial-gradient(circle, ${bgProjectColors.main} 0%, ${bgProjectColors.secondary} 100%)` }}>

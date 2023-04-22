@@ -31,7 +31,7 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
             id={`mobile-${name}`}
             src={mobileImage}
             alt={`Mobile Image from project: ${name}`}
-            className={`${baseImageStyle} top-0 left-0 h-48 w-24 object-cover ${isMobileHover}`}
+            className={`${baseImageStyle} top-0 left-0 h-48 w-24 object-contain ${isMobileHover}`}
             onMouseEnter={() => { handleImageHover(setMobileHover) }}
             onMouseLeave={() => { handleImageHover(setMobileHover) }}
             onClick={() => { setOpenMobileImage(true) }}

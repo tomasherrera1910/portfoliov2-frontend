@@ -17,7 +17,7 @@ export const projectsEs: Project[] = [
   },
   {
     id: 2,
-    name: 'Movies Web',
+    name: 'Películas Web',
     description: 'Esto fue un challenge, que habia que seguir un diseño y quede bastante conforme tanto con la funcionalidad, como con el resultado final.',
     images: {
       desktop: 'https://res.cloudinary.com/dxtmgc2ja/image/upload/v1681656807/portfolio-projects/MOVIES-DESKTOP_n09tau.png',
