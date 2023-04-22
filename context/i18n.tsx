@@ -7,7 +7,7 @@ export const I18NContext = createContext<any>({})
 interface Children {
   children: ReactNode
 }
-const languages: Record<string, Record<string, string>> = { es, en }
+const languages: Record<string, Record<string, any>> = { es, en }
 export function I18NProvider ({ children }: Children) {
   const { locale } = useRouter()
 
