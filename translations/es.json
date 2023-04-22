@@ -4,5 +4,10 @@
     "titleSkills": "Habilidades",
     "titleProjects": "Proyectos",
     "titleEducation": "Educación",
-    "titleContact": "Contacto"
+    "titleContact": "Contacto",
+    "filterProjectsTitle": "Filtrar proyectos",
+    "filterOpen": "Abrir filtros",
+    "filterClose": "Cerrar filtros",
+    "filterResults": "${1} resultados",
+    "filterReset": "Quitar"
 }

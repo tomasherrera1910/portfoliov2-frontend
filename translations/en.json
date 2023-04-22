@@ -4,5 +4,10 @@
     "titleSkills": "Skills",
     "titleProjects": "Projects",
     "titleEducation": "Education",
-    "titleContact": "Contact"
+    "titleContact": "Contact",
+    "filterProjectsTitle": "Filter Projects",
+    "filterOpen": "Open filters",
+    "filterClose": "Close filters",
+    "filterResults": "${1} results",
+    "filterReset": "Reset"
 }
