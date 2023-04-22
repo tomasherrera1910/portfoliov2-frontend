@@ -16,9 +16,10 @@ interface Props {
   skills: Skill[]
   projects: Project[]
 }
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+  const { locale } = context
   const skills = await api.getSkills()
-  const projects = await api.getProjects()
+  const projects = await api.getProjects(locale ?? 'en')
   return {
     props: {
       skills,
