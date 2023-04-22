@@ -1,5 +1,6 @@
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import useI18N from '../../hooks/useI18N'
 
 interface Props {
   totalPages: number | null
@@ -8,6 +9,7 @@ interface Props {
   nextPage: () => void
 }
 export default function Pagination ({ totalPages, page, prevPage, nextPage }: Props): JSX.Element {
+  const { t } = useI18N()
   const cantBackPage = page - 1 === 0
   const cantNextPage = page + 1 > (totalPages ?? 1)
   return (
@@ -15,7 +17,7 @@ export default function Pagination ({ totalPages, page, prevPage, nextPage }: Pr
       <button onClick={prevPage} disabled={cantBackPage} className={`${cantBackPage ? 'text-slate-300 dark:text-slate-800' : 'hover:scale-110 cursor-pointer'} ease-in-out duration-200`}>
         <FontAwesomeIcon icon={faArrowLeft} className='w-5' />
       </button>
-      <span className='font-barlow'>Page {page} of {totalPages}</span>
+      <span className='font-barlow'>{t('projectsPagination', page, totalPages)}</span>
       <button onClick={nextPage} disabled={cantNextPage} className={`${cantNextPage ? 'text-slate-300 dark:text-slate-800' : 'hover:scale-110 cursor-pointer'}`}>
         <FontAwesomeIcon icon={faArrowRight} className='w-5' />
       </button>
