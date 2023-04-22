@@ -10,8 +10,8 @@ const api = {
     const data: Skill[] = await getSkills()
     return data
   },
-  getProjects: async (): Promise<Project[]> => {
-    const data: Project[] = await getProjects()
+  getProjects: async (locale: string): Promise<Project[]> => {
+    const data: Project[] = await getProjects(locale)
     return data
   }
 }
