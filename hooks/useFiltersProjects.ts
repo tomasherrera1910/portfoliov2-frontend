@@ -25,7 +25,9 @@ const useFiltersProjects = ({ initialProjects }: HookParameters) => {
       setFilters(prevState => [...prevState, id])
     }
   }
-
+  useEffect(() => {
+    setFilteredProjects(initialProjects)
+  }, [initialProjects])
   useEffect(() => {
     if (filters.length > 0) {
       setFilteredProjects(initialProjects.filter(project => {
