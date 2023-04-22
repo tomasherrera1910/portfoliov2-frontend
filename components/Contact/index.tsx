@@ -36,13 +36,13 @@ export function Contact (): JSX.Element {
         >
           <div className='px-2'>
             <section className='md:flex md:mt-6 md:justify-between'>
-              <ContactInput placeholder='Nombre' inputName='name' inputValue={inputsFields.name} handleChange={(value: string) => { handleChangeInput('name', value) }} />
-              <ContactInput placeholder='Email' inputName='email' inputValue={inputsFields.email} handleChange={(value: string) => { handleChangeInput('email', value) }} />
+              <ContactInput placeholder={t('contactInputName')} inputName='name' inputValue={inputsFields.name} handleChange={(value: string) => { handleChangeInput('name', value) }} />
+              <ContactInput placeholder={t('contactInputEmail')} inputName='email' inputValue={inputsFields.email} handleChange={(value: string) => { handleChangeInput('email', value) }} />
             </section>
-            <ContactInput placeholder='Asunto' inputName='subject' inputValue={inputsFields.subject} handleChange={(value: string) => { handleChangeInput('subject', value) }} />
-            <ContactInput area placeholder='Mensaje' inputName='message' inputValue={inputsFields.message} handleChange={(value: string) => { handleChangeInput('message', value) }} />
-            <button className={`${buttonLight} ${buttonDark} font-roboto bg-opacity-70 w-full py-2 rounded-sm border-b-2 ease-linear duration-200 hover:scale-95`}>
-              ENVIAR
+            <ContactInput placeholder={t('contactInputSubject')} inputName='subject' inputValue={inputsFields.subject} handleChange={(value: string) => { handleChangeInput('subject', value) }} />
+            <ContactInput area placeholder={t('contactInputMessage')} inputName='message' inputValue={inputsFields.message} handleChange={(value: string) => { handleChangeInput('message', value) }} />
+            <button className={`${buttonLight} ${buttonDark} uppercase font-roboto bg-opacity-70 w-full py-2 rounded-sm border-b-2 ease-linear duration-200 hover:scale-95`}>
+              {t('contactSubmitButton')}
             </button>
           </div>
         </form>

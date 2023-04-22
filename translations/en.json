@@ -9,5 +9,11 @@
     "filterOpen": "Open filters",
     "filterClose": "Close filters",
     "filterResults": "${1} results",
-    "filterReset": "Reset"
+    "filterReset": "Reset",
+    "contactInputName": "Name",
+    "contactInputEmail": "Email",
+    "contactInputSubject": "Subject",
+    "contactInputMessage": "Message",
+    "contactSubmitButton": "Send",
+    "footerText": "Designed and developed by"
 }

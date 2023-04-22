@@ -2,15 +2,17 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import useI18N from '../hooks/useI18N'
 
 export function Footer (): JSX.Element {
+  const { t } = useI18N()
   const darkFooter = 'dark:bg-[#010108] dark:border-t-slate-800 dark:text-white'
   const lightFooter = 'bg-[#9f9e9e] border-t-slate-800 text-black'
   return (
     <footer className={`${lightFooter} ${darkFooter} border-t-[1px] py-2 flex flex-col items-center font-roboto`}>
       <section className='flex max-w-3xl items-center justify-center'>
         <div className='flex flex-col gap-2'>
-          <p className='flex text-sm gap-1 text-gray-900 dark:text-gray-300 items-center justify-center flex-wrap'>Designed and developed by
+          <p className='flex text-sm gap-1 text-gray-900 dark:text-gray-300 items-center justify-center flex-wrap'>{t('footerText')}
             <a href='https://www.linkedin.com/in/mauro-tomas-herrera/' target='_blank' rel='noreferrer' className='text-black dark:text-white font-bold text-base hover:underline'>Tomás Herrera</a>
             <span className='font-barlow font-semibold text-xs'>2022-2023</span>
           </p>
