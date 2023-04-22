@@ -11,6 +11,7 @@
     "filterClose": "Close filters",
     "filterResults": "${1} results",
     "filterReset": "Reset",
+    "projectsTechnologies": "Used technology:",
     "contactInputName": "Name",
     "contactInputEmail": "Email",
     "contactInputSubject": "Subject",
