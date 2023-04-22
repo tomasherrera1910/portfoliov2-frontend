@@ -6,11 +6,13 @@ import { ProjectImages } from './ProjectImages'
 import ProjectCardLinks from './ProjectCardLinks'
 import ProjectHeader from './ProjectHeader'
 import ProjectTechnologies from './ProjectTechnologies'
+import useI18N from '../../hooks/useI18N'
 interface Props {
   project: Project
 }
 
 export default function ProjectCard ({ project }: Props): JSX.Element {
+  const { t } = useI18N()
   const { toggle, handleToggle } = useToggle()
   const bgProjectColors = {
     main: '#222',
@@ -23,7 +25,7 @@ export default function ProjectCard ({ project }: Props): JSX.Element {
           <ProjectImages desktopImage={project.images.desktop} mobileImage={project.images.mobile} name={project.name} />
         </section>
         <button onClick={handleToggle} className='flex items-center absolute top-2 right-2 gap-1 text-blue-500 underline duration-200 ease-in-out mt-1 focus:text-blue-700 sm:hidden'>
-          {toggle ? 'Ver menos' : 'Ver más'} <FontAwesomeIcon icon={toggle ? faAngleUp : faAngleDown} width={16} />
+          {toggle ? t('less') : t('more')} <FontAwesomeIcon icon={toggle ? faAngleUp : faAngleDown} width={16} />
         </button>
         <div className={`flex flex-col gap-3 sm:grow ${toggle ? 'block' : 'hidden'} sm:block`}>
           <ProjectHeader description={project.description} name={project.name} />
