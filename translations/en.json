@@ -28,7 +28,7 @@
         {
             "id": 1,
             "name": "UTN - Higher Technician Degree in Programming",
-            "date": "2019-2022",
+            "date": "2019 - 2022",
             "image": "/utn-logo.jpg",
             "url": "https://www4.frm.utn.edu.ar/tecnicatura-superior-programacion/",
             "description": "This was my first contact with programming, where I learned all the basics of it and also languages such as Java, C#, C++, Javascript, SQL and NoSQL databases."
@@ -36,7 +36,7 @@
         {
             "id": 2,
             "name": "NO COUNTRY",
-            "date": "2023-Actually",
+            "date": "2023 - Present",
             "image": "/nocountry-logo.jpg",
             "url": "https://www.nocountry.tech/",
             "description": "Here I perform simulations of work environments. I have completed 2 projects and have learned a lot about agile methodologies such as Scrum and how to work effectively with teams on Github."
