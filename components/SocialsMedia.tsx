@@ -19,7 +19,7 @@ export default function SocialsMedia (): JSX.Element {
           <FontAwesomeIcon icon={faGithub as IconProp} className='w-9 h-9' />
         </li>
       </a>
-      <a href={locale === 'es' ? '/resumes/es-resume.pdf' : '/resumes/en-resume.pdf'} target='_blank' rel='noreferrer'>
+      <a href={locale === 'es' ? '/resumes/tomasherrera-cv.pdf' : '/resumes/tomasherrera-resume.pdf'} target='_blank' rel='noreferrer'>
         <li className={`${baseLiStyle} text-red-800 hover:text-slate-300 hover:bg-red-800`}>
           <FontAwesomeIcon icon={faFileArrowDown as IconProp} className='w-9 h-9' />
         </li>
