@@ -3,8 +3,10 @@ import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import useI18N from '../hooks/useI18N'
+import { useRouter } from 'next/router'
 
 export function Footer (): JSX.Element {
+  const { locale } = useRouter()
   const { t } = useI18N()
   const darkFooter = 'dark:bg-[#010108] dark:border-t-slate-800 dark:text-white'
   const lightFooter = 'bg-[#9f9e9e] border-t-slate-800 text-black'
@@ -29,7 +31,7 @@ export function Footer (): JSX.Element {
             >
               <FontAwesomeIcon icon={faGithub as IconProp} className='w-4' />
             </a>
-            <a className='border-[1px] rounded-full p-2 duration-300 ease-in-out cursor-pointer bg-red-900 text-white border-white grayscale hover:grayscale-0 hover:scale-110'>
+            <a href={locale === 'es' ? '/resumes/es-resume.pdf' : '/resumes/en-resume.pdf'} target='_blank' className='border-[1px] rounded-full p-2 duration-300 ease-in-out cursor-pointer bg-red-900 text-white border-white grayscale hover:grayscale-0 hover:scale-110' rel='noreferrer'>
               <FontAwesomeIcon icon={faFilePdf as IconProp} className='w-4' />
             </a>
           </nav>

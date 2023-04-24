@@ -2,8 +2,10 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faFileArrowDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useRouter } from 'next/router'
 
 export default function SocialsMedia (): JSX.Element {
+  const { locale } = useRouter()
   const baseLiStyle = 'p-2 border-[1px] dark:border-slate-300 border-slate-600 rounded-full ease-in-out duration-300 hover:scale-125'
   return (
     <>
@@ -17,7 +19,7 @@ export default function SocialsMedia (): JSX.Element {
           <FontAwesomeIcon icon={faGithub as IconProp} className='w-9 h-9' />
         </li>
       </a>
-      <a href='https://www.github.com/tomasherrera1910' target='_blank' rel='noreferrer'>
+      <a href={locale === 'es' ? '/resumes/es-resume.pdf' : '/resumes/en-resume.pdf'} target='_blank' rel='noreferrer'>
         <li className={`${baseLiStyle} text-red-800 hover:text-slate-300 hover:bg-red-800`}>
           <FontAwesomeIcon icon={faFileArrowDown as IconProp} className='w-9 h-9' />
         </li>
