@@ -57,7 +57,7 @@ export function ProjectImages ({ desktopImage, mobileImage, name }: Props): JSX.
           <img
             src={mobileImage}
             alt={`Desktop Image from project: ${name}`}
-            className='h-screen max-h-[768px]'
+            className='h-screen max-h-[768px] object-contain'
           />
           <button className={closeButtonStyle} onClick={() => { setOpenMobileImage(false) }}>
             X
