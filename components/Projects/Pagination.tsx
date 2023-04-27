@@ -15,7 +15,7 @@ export default function Pagination ({ totalPages, page, prevPage, nextPage }: Pr
   const disabledButton = 'text-slate-400 dark:text-slate-800'
   const activeButton = 'hover:scale-110 hover:bg-black hover:bg-opacity-50 dark:hover:bg-white dark:hover:bg-opacity-10 hover:rounded-full cursor-pointer text-white'
   return (
-    <footer className='w-full flex justify-around items-center py-4 bg-gray-600 dark:bg-black bg-opacity-40 border-[1px] border-slate-300 dark:border-slate-800'>
+    <nav className='w-full flex justify-around items-center py-4 bg-gray-600 dark:bg-black bg-opacity-40 border-[1px] border-slate-300 dark:border-slate-800'>
       <button onClick={prevPage} disabled={cantBackPage} className={`p-1 ease-in-out duration-200 ${cantBackPage ? disabledButton : activeButton}`}>
         <FontAwesomeIcon icon={faArrowLeft} className='w-5 h-5' />
       </button>
@@ -23,6 +23,6 @@ export default function Pagination ({ totalPages, page, prevPage, nextPage }: Pr
       <button onClick={nextPage} disabled={cantNextPage} className={`p-1 ease-in-out duration-200 ${cantNextPage ? disabledButton : activeButton}`}>
         <FontAwesomeIcon icon={faArrowRight} className='w-5 h-5' />
       </button>
-    </footer>
+    </nav>
   )
 }
